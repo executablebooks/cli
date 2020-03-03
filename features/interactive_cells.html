@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interactive code in your book &#8212; Testing my book  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link href="../_static/css/theme.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Typesetting Math in your book" href="math.html" />
+    <link rel="prev" title="Beta features" href="beta.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../citations.html">Including citations in your book</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../guide/01_overview.html">The Jupyter Book Guide</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="features.html">Features</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    
+    
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="markdown.html">Creating book content</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="notebooks.html">Content with notebooks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="hiding.html">Hiding or removing code blocks or entire cells</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="interact.html">Connecting content with JupyterHub and Binder</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="executing.html">Executing pages of your book</a>
+              </li>
+          
+        
+          
+
+              <li class="active">
+                  <a href="beta.html">Beta features</a>
+                  <ul>
+                  
+                      <li class="active">
+                          <a href="">Interactive code in your book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="math.html">Typesetting Math in your book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="titles.html">Page titles and authors</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="citations.html">Including citations in your book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="jupytext.html">Jupytext with Jupyter Book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="layout.html">Controlling the page layout</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="page.html">Building a single page instead of a book</a>
+                      </li>
+                  
+                  </ul>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#making-your-page-inputs-interactive" class="nav-link">Making your page inputs interactive</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#running-cells-in-thebelab-when-it-is-initialized" class="nav-link">Running cells in Thebelab when it is initialized</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-interactive-widgets-on-your-page" class="nav-link">Using interactive widgets on your page</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"102c5b7404364fb7b9d91b2460836e31": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatSliderModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "s", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_cb84630e7d7043d698c087e08ce1d1db", "max": 2.0, "min": 0.1, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_93f90fbf60814fa98285d0b6b91f796f", "value": 1.0}}, "1a6ac0bd40224a918b18c577de309496": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DropdownModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["viridis", "magma", "jet"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "cmap", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_321d5513581845db9b47cc8f59141acd", "style": "IPY_MODEL_ca0951286926484eb72137590db31f14"}}, "321d5513581845db9b47cc8f59141acd": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "356daedd325248c1aca28e88b3e39228": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_102c5b7404364fb7b9d91b2460836e31", "IPY_MODEL_1a6ac0bd40224a918b18c577de309496", "IPY_MODEL_40ef18245e274e31b41334adf6f5c255"], "layout": "IPY_MODEL_9d99dbbc6472415db7bf31c10d979ba8"}}, "40ef18245e274e31b41334adf6f5c255": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_789ee3601f5a4632833d4463e12be1a7", "msg_id": "", "outputs": []}}, "789ee3601f5a4632833d4463e12be1a7": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "93f90fbf60814fa98285d0b6b91f796f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "9d99dbbc6472415db7bf31c10d979ba8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ca0951286926484eb72137590db31f14": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "cb84630e7d7043d698c087e08ce1d1db": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+<div class="section" id="interactive-code-in-your-book">
+<h1>Interactive code in your book<a class="headerlink" href="#interactive-code-in-your-book" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes you’d rather let people interact with code <em>directly on the page</em>
+instead of sending them off to a Binder or a JupyterHub. There are currently
+a few ways to make this happen in Jupyter Book (both of which are experimental).</p>
+<p>This page describes how to bring interactivity to your book. Both of these
+tools use <a class="reference external" href="https://mybinder.org"><strong>MyBinder</strong></a> to provide a remote kernel.</p>
+<div class="section" id="making-your-page-inputs-interactive">
+<h2>Making your page inputs interactive<a class="headerlink" href="#making-your-page-inputs-interactive" title="Permalink to this headline">¶</a></h2>
+<p>✨<strong>experimental</strong>✨</p>
+<p>If you’d like to provide interactivity for your content without making your readers
+leave the Jupyter Book site, you can use a project called <a class="reference external" href="https://github.com/minrk/thebelab">Thebelab</a>.</p>
+<p>This provides you a button that, when clicked, will convert each code cell into
+an <strong>interactive</strong> cell that can be edited. It also adds a “run” button to each cell,
+and connects to a Binder kernel running in the cloud.
+As an alternative to pressing the Thebelab button at the top of the page, you
+can press the <img src="../images/logo/edit-button.svg" alt="" style="width: 20px; display: inline;" /> symbol in the top right corner of each code cell to start the
+interactive mode.</p>
+<p>To add a Thebelab button to your Jupyter Book pages, use the following configuration:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">use_thebelab_button              </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># If &#39;true&#39;, display a button to allow in-page running code cells with Thebelab</span>
+</pre></div>
+</div>
+<p>In addition, you can configure the Binder settings that are used to provide a kernel for
+Thebelab to run the code. These use the same configuration fields as the BinderHub interact
+buttons described above.</p>
+<p>For an example, click the <strong>Thebelab</strong> button above on this page, and run the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="running-cells-in-thebelab-when-it-is-initialized">
+<h3>Running cells in Thebelab when it is initialized<a class="headerlink" href="#running-cells-in-thebelab-when-it-is-initialized" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you’d like to initialize the kernel that Thebelab uses by running
+some code ahead of time. This might be code that you then hide from the user
+in order to narrow the focus of what they interact with. This is possible
+by using Jupyter Notebook tags.</p>
+<p>Adding the tag <code class="docutils literal notranslate"><span class="pre">thebelab-init</span></code> to any code cell will cause Thebelab to
+run this cell after it has received a kernel. Any subsequent Thebelab cells
+will have access to the same environment (e.g. any module imports made in the
+initialization cell).</p>
+<p>You can then pair this with something like <code class="docutils literal notranslate"><span class="pre">hide_input</span></code> in order to run
+initialization code that your user doesn’t immediately see. For example,
+below we’ll initialize a variable in a hidden cell, and then tell another
+cell to print the output of that variable.</p>
+<div class="cell tag_thebelab-init tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_hidden_variable</span> <span class="o">=</span> <span class="s1">&#39;wow, it worked!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The variable for this is defined in the cell above!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_hidden_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-interactive-widgets-on-your-page">
+<h2>Using interactive widgets on your page<a class="headerlink" href="#using-interactive-widgets-on-your-page" title="Permalink to this headline">¶</a></h2>
+<p>✨<strong>experimental</strong>✨</p>
+<p><a class="reference external" href="https://www.nbinteract.com"><strong>nbinteract</strong></a> is a tool for displaying interactive widgets in your
+static HTML page. It uses a Binder kernel to power the widgets, and displays output that your
+readers can interact with. For example, below we will show a simple matplotlib plot that can be made
+interactive with <strong>ipywidgets</strong></p>
+<p>To add a <strong>Show Widgets</strong> button to your Jupyter Book pages, use the following configuration:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">use_show_widgets_button         </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># If &#39;true&#39;, display a button to show widgets backed by a Binder kernel</span>
+</pre></div>
+</div>
+<p>Then, tell Jupyter Book that you want a cell to display a widget by <strong>adding a tag</strong> to the cell’s
+metadata called <code class="docutils literal notranslate"><span class="pre">interactive</span></code>. When a reader clicks on the “show widgets” button, any cells
+with this tag will be run on Binder, and have their output widgets displayed underneath the cell.</p>
+<p>Here’s an example of cell metadata that would trigger this behavior:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;interactive&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can configure the Binder settings that are used to provide a kernel to run the code.
+These use the same configuration fields as the BinderHub interact buttons described above.</p>
+<p>Clicking on “show widgets” should display a widget below. We’ve hidden the code cell that
+generates the widget by default (though you can always show it by clicking the button to
+the right!</p>
+<div class="cell tag_hide_input tag_interactive docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">FloatSlider</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_plot_size</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cmap</span> <span class="o">==</span> <span class="s2">&quot;jet&quot;</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;h2 style=&#39;color: red; margin: 0px auto;&#39;&gt;Nope&lt;/h2&gt;&quot;</span><span class="p">))</span>
+        <span class="k">return</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">interact</span><span class="p">(</span><span class="n">update_plot_size</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=.</span><span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="s1">&#39;jet&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="beta.html" title="previous page">Beta features</a>
+    <a class='right-next' id="next-link" href="math.html" title="next page">Typesetting Math in your book</a>
+
+              </div>
+              
+          </main>
+
+      </div>
+    </div>
+
+    <script src="../_static/js/theme.js"></script>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright 2018, Chris Holdgraf.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

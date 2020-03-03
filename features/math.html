@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Typesetting Math in your book &#8212; Testing my book  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link href="../_static/css/theme.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Page titles and authors" href="titles.html" />
+    <link rel="prev" title="Interactive code in your book" href="interactive_cells.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../citations.html">Including citations in your book</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../guide/01_overview.html">The Jupyter Book Guide</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="features.html">Features</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    
+    
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="markdown.html">Creating book content</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="notebooks.html">Content with notebooks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="hiding.html">Hiding or removing code blocks or entire cells</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="interact.html">Connecting content with JupyterHub and Binder</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="executing.html">Executing pages of your book</a>
+              </li>
+          
+        
+          
+
+              <li class="active">
+                  <a href="beta.html">Beta features</a>
+                  <ul>
+                  
+                      <li class="">
+                          <a href="interactive_cells.html">Interactive code in your book</a>
+                      </li>
+                  
+                      <li class="active">
+                          <a href="">Typesetting Math in your book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="titles.html">Page titles and authors</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="citations.html">Including citations in your book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="jupytext.html">Jupytext with Jupyter Book</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="layout.html">Controlling the page layout</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="page.html">Building a single page instead of a book</a>
+                      </li>
+                  
+                  </ul>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="typesetting-math-in-your-book">
+<h1>Typesetting Math in your book<a class="headerlink" href="#typesetting-math-in-your-book" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book uses <a class="reference external" href="http://docs.mathjax.org/">MathJax</a> for typesetting math in your
+book. This allows you to have LaTeX-style mathematics in your online content.
+This page shows you a few ways to control this.</p>
+<p>For more information about equation numbering, see the
+<a class="reference external" href="http://docs.mathjax.org/en/v2.7-latest/tex.html#automatic-equation-numbering">MathJax equation numbering documentation</a>.</p>
+</div>
+<div class="section" id="in-line-math">
+<h1>In-line math<a class="headerlink" href="#in-line-math" title="Permalink to this headline">¶</a></h1>
+<p>To insert in-line math use the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol within a Markdown cell.
+For example, the text <code class="docutils literal notranslate"><span class="pre">$this_{is}^{inline}$</span></code> will produce: <span class="math notranslate nohighlight">\(this_{is}^{inline}\)</span>.</p>
+</div>
+<div class="section" id="math-blocks">
+<h1>Math blocks<a class="headerlink" href="#math-blocks" title="Permalink to this headline">¶</a></h1>
+<p>You can also include math blocks for separate equations. This allows you to focus attention
+on more complex or longer equations, as well as link to them in your pages. To use a block
+equation, wrap the equation in either <code class="docutils literal notranslate"><span class="pre">$$</span></code> or <code class="docutils literal notranslate"><span class="pre">\begin</span></code> statements.</p>
+<p>For example,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+  <span class="k">\int</span><span class="nb">_</span>0<span class="nb">^</span><span class="k">\infty</span> <span class="k">\frac</span><span class="nb">{</span>x<span class="nb">^</span>3<span class="nb">}{</span>e<span class="nb">^</span>x-1<span class="nb">}</span><span class="k">\,</span>dx = <span class="k">\frac</span><span class="nb">{</span><span class="k">\pi</span><span class="nb">^</span>4<span class="nb">}{</span>15<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</pre></div>
+</div>
+<p>results in</p>
+<p>\begin{equation}
+\int_0^\infty \frac{x^3}{e^x-1},dx = \frac{\pi^4}{15}
+\end{equation}</p>
+<p>and</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<p>results in</p>
+<p><div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\]</div>
+</p>
+<div class="section" id="numbering-equations">
+<h2>Numbering equations<a class="headerlink" href="#numbering-equations" title="Permalink to this headline">¶</a></h2>
+<p>MathJax has built-in support for numbering equations. This makes it possible to
+easily reference equations throughout your page. To do so, add this tag
+to a block equation:</p>
+<p><code class="docutils literal notranslate"><span class="pre">\tag{&lt;number&gt;}</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">\tag</span></code> provides a number for the equation that will be inserted when you refer
+to it in the text.</p>
+<p>For example, the following code:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>equation 1
+<span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nb">  </span><span class="nv">\tag</span><span class="nb">{</span><span class="m">1</span><span class="nb">}</span>
+<span class="s">$$</span>
+
+equation 2
+
+<span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nb">  </span><span class="nv">\tag</span><span class="nb">{</span><span class="m">2</span><span class="nb">}</span>
+<span class="s">$$</span>
+
+equation 999
+
+<span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nb">  </span><span class="nv">\tag</span><span class="nb">{</span><span class="m">999</span><span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<p>Results in these math blocks:</p>
+<p>equation 1
+<div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\tag{1}
+\]</div>
+</p>
+<p>equation 2</p>
+<p><div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\tag{2}
+\]</div>
+</p>
+<p>equation 999</p>
+<p><div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\tag{999}
+\]</div>
+</p>
+<div class="section" id="automatic-numbering">
+<h3>Automatic numbering<a class="headerlink" href="#automatic-numbering" title="Permalink to this headline">¶</a></h3>
+<p>If you’d like <strong>all</strong> block equations to be numbered with MathJax, you can activate
+this with the following configuration in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">number_equations</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>In this case, all equations will have numbers. If you’d like to deactivate
+an equation’s number, include a <code class="docutils literal notranslate"><span class="pre">\notag</span></code> with your equation, like so:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nb">  </span><span class="nv">\notag</span><span class="nb"></span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="linking-to-equations">
+<h2>Linking to equations<a class="headerlink" href="#linking-to-equations" title="Permalink to this headline">¶</a></h2>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">\label{mylabel}</span></code> to an equation allows you to refer to the equation elsewhere in the page. You
+can define a human-friendly label and MathJax will insert an anchor with the following form:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>#mjx-eqn-mylabel
+</pre></div>
+</div>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">\label</span></code> in conjunction with <code class="docutils literal notranslate"><span class="pre">\tag</span></code>, then you can insert references directly to an equation
+by using the <code class="docutils literal notranslate"><span class="pre">\ref</span></code> syntax. For example, here’s an equation with a tag and label:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nv">\label</span><span class="nb">{mylabel</span><span class="m">1</span><span class="nb">}</span><span class="nv">\tag</span><span class="nb">{</span><span class="m">24</span><span class="nb">}</span>
+<span class="s">$$</span>
+
+<span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\infty</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">3</span><span class="nb">}{e^x</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span><span class="nv">\,</span><span class="nb">dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb">^</span><span class="m">4</span><span class="nb">}{</span><span class="m">15</span><span class="nb">}</span>
+<span class="nv">\label</span><span class="nb">{mylabel</span><span class="m">2</span><span class="nb">}</span><span class="nv">\tag</span><span class="nb">{</span><span class="m">25</span><span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<p><div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\label{mylabel1}\tag{24}
+\]</div>
+</p>
+<p><div class="math notranslate nohighlight">
+\[
+\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\label{mylabel2}\tag{25}
+\]</div>
+</p>
+<p>Now, we can refer to these math blocks with <code class="docutils literal notranslate"><span class="pre">\ref</span></code> elements. For example,
+we can mention Equation \ref{mylabel1} using <code class="docutils literal notranslate"><span class="pre">\ref{mylabel1}</span></code> and
+Equation \ref{mylabel2} with <code class="docutils literal notranslate"><span class="pre">\ref{mylabel2}</span></code>.</p>
+<p>Note that these equations also have anchors on them, which can be used to link
+to an equation from elsewhere, for example with this link text:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#mjx-eqn-mylabel2&quot;</span><span class="p">&gt;</span>My link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="interactive_cells.html" title="previous page">Interactive code in your book</a>
+    <a class='right-next' id="next-link" href="titles.html" title="next page">Page titles and authors</a>
+
+              </div>
+              
+          </main>
+
+      </div>
+    </div>
+
+    <script src="../_static/js/theme.js"></script>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright 2018, Chris Holdgraf.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

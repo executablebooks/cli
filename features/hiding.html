@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hiding or removing code blocks or entire cells &#8212; Testing my book  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link href="../_static/css/theme.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Connecting content with JupyterHub and Binder" href="interact.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../citations.html">Including citations in your book</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../guide/01_overview.html">The Jupyter Book Guide</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="features.html">Features</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    
+    
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="markdown.html">Creating book content</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="notebooks.html">Content with notebooks</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">Hiding or removing code blocks or entire cells</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="interact.html">Connecting content with JupyterHub and Binder</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="executing.html">Executing pages of your book</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="beta.html">Beta features</a>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="hiding-or-removing-code-blocks-or-entire-cells">
+<h1>Hiding or removing code blocks or entire cells<a class="headerlink" href="#hiding-or-removing-code-blocks-or-entire-cells" title="Permalink to this headline">¶</a></h1>
+<p>It’s possible to control which cells show up in your final book pages. For example,
+you may want to display a complex visualization to illustrate an idea, but don’t
+want the page to be cluttered with a large code cell that generated the viz. In other
+cases, you may want to remove a code cell entirely.</p>
+<p>In this case, you have two options:</p>
+<ul class="simple">
+<li><p><strong>Hiding</strong> the inputs of a code cell will hide the cell’s contents and provide
+a button that lets readers reveal the content.</p></li>
+<li><p><strong>Removing</strong> the inputs (or the entire cell) will prevent the contents from
+making it into your book’s HTML. It will be entirely gone (though still present in
+the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file)</p></li>
+</ul>
+<p>In both cases, Jupyter Books uses <strong>notebook cell tags</strong> to determine which code cells to hide.
+To make this process easier to manage, we recommend the
+<a class="reference external" href="https://github.com/jupyterlab/jupyterlab-celltags">JupyterLab Cell Tags extension</a></p>
+</div>
+<div class="section" id="hiding-page-elements-and-displaying-a-button-to-show-them">
+<h1>Hiding page elements and displaying a button to show them<a class="headerlink" href="#hiding-page-elements-and-displaying-a-button-to-show-them" title="Permalink to this headline">¶</a></h1>
+<p>You can hide most cell elements of a page. The sections below describe how
+to hide each.</p>
+<p>If an element is hidden, Jupyter Book will display a small button to the right of the
+old location for the hidden element. If a user clicks the button,
+the element will be displayed.</p>
+<div class="section" id="hiding-inputs">
+<h2>Hiding inputs<a class="headerlink" href="#hiding-inputs" title="Permalink to this headline">¶</a></h2>
+<p>If you add the tag <code class="docutils literal notranslate"><span class="pre">hide_input</span></code> to a cell, then Jupyter Book will hide the cell but
+display the outputs.</p>
+<p>Here’s an example of cell metadata that would trigger the “hide code” behavior:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide_input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For example, see the cell below contains the <code class="docutils literal notranslate"><span class="pre">hide_input</span></code> tag:</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Note how we only see the output by default. Now try clicking the button
+to the right of the empty spot above!</p>
+</div>
+<div class="section" id="hiding-outputs">
+<h2>Hiding outputs<a class="headerlink" href="#hiding-outputs" title="Permalink to this headline">¶</a></h2>
+<p>You can also hide the <em>outputs</em> of a cell. For example, if you’d like to ask users to
+think about what the output will look like first before viewing an answer. To do so,
+add the following tag to your cell:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide_output&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_hide_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell should have its output hidden!</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="hiding-markdown-cells">
+<h2>Hiding markdown cells<a class="headerlink" href="#hiding-markdown-cells" title="Permalink to this headline">¶</a></h2>
+<p>Finally, you can also hide markdown cells in your page. This is useful if you’d
+like to provide some extra information to readers that want to dig deeper, but you
+don’t want to clutter the page with too much information. To do so,
+add the following tag to your markdown cell:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide_input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<p>For example, this cell should be hidden!</p>
+</div>
+</div>
+<div class="section" id="hiding-the-whole-cell">
+<h2>Hiding the whole cell<a class="headerlink" href="#hiding-the-whole-cell" title="Permalink to this headline">¶</a></h2>
+<p>If you’d like to hide the whole cell (both inputs and outputs) just add each
+tag to the cell metadata, like so:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide_input&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hide_output&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_hide_output tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell should have its output hidden!</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="removing-inputs-from-the-html">
+<h1>Removing inputs from the HTML<a class="headerlink" href="#removing-inputs-from-the-html" title="Permalink to this headline">¶</a></h1>
+<p>In the above examples, we are only <em>hiding</em> the inputs, with the option
+that readers can reveal them if they wish. However, if you’d like to completely <strong>remove</strong>
+the inputs, so that their contents do not make it into the book’s HTML, you may
+use the following tag:</p>
+<p>To remove the inputs of a cell:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;remove_input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following cell demonstrates removing inputs. Note that in
+this case, there is no button available to show the input contents,
+the entire input cell is gone!</p>
+<div class="section" id="removing-inputs">
+<h2>Removing inputs<a class="headerlink" href="#removing-inputs" title="Permalink to this headline">¶</a></h2>
+<p>The following cell has its inputs removed</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example, this cell&#39;s inputs will be removed</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="removing-outputs">
+<h2>Removing outputs<a class="headerlink" href="#removing-outputs" title="Permalink to this headline">¶</a></h2>
+<p>Similar to hiding inputs, it is also possible to hide the outputs
+of a cell.</p>
+<p>To remove the outputs of a cell:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;remove_output&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-an-entire-cell">
+<h2>Removing an entire cell<a class="headerlink" href="#removing-an-entire-cell" title="Permalink to this headline">¶</a></h2>
+<p>You can also remove <strong>both</strong> the inputs and outputs of a cell, in which case it
+won’t show up in your book at all. These cells remain in the notebook file itself,
+so they’ll show up if readers click on a JupyterHub or Binder link from a page.</p>
+<p>To remove both the inputs and outputs of a cell, add the tag <code class="docutils literal notranslate"><span class="pre">remove_cell</span></code> to the tags
+of the cell. Here’s an example of cell metadata that would trigger the “remove cell” behavior:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;remove_cell&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>These cells will be entirely removed from each book page - remember that if you’d like to
+optionally display the inputs of a cell instead, you should use the <code class="docutils literal notranslate"><span class="pre">hide_input</span></code> tag.</p>
+<p>For example, there’s a cell below this one that won’t make it into the final book,
+because it has been removed!</p>
+<div class="cell tag_remove_cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example, this entire cell (input and output) will be removed</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="removing-markdown-cells">
+<h2>Removing markdown cells<a class="headerlink" href="#removing-markdown-cells" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, you have extra Markdown in your documents that isn’t meant for the
+reader. For example, if you want to organize your notebook based on developer-relevant
+information (like “# Import packages”) but you don’t want the reader to see this.</p>
+<p>In this case, you can use the <code class="docutils literal notranslate"><span class="pre">remove_cell</span></code> pattern described above as well.</p>
+<p>Here’s an example of markdown cell metadata that would trigger the “hide text” behavior:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;remove_cell&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="for-example">
+<h3>For example 🎉<a class="headerlink" href="#for-example" title="Permalink to this headline">¶</a></h3>
+<p>This markdown cell will be hidden from users!</p>
+</div>
+</div>
+<div class="section" id="removing-empty-cells">
+<h2>Removing empty cells<a class="headerlink" href="#removing-empty-cells" title="Permalink to this headline">¶</a></h2>
+<p>You don’t need to do anything to remove empty cells from your pages.
+Jupyter Book will remove these automatically. Any cell with <em>only</em>
+whitespace will be removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>For example, in the notebook for this page there are two cells above this one. One
+cell with whitespace, and another cell with a few line-breaks. Both are gone in
+the final output.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">Content with notebooks</a>
+    <a class='right-next' id="next-link" href="interact.html" title="next page">Connecting content with JupyterHub and Binder</a>
+
+              </div>
+              
+          </main>
+
+      </div>
+    </div>
+
+    <script src="../_static/js/theme.js"></script>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright 2018, Chris Holdgraf.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

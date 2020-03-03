@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Build the book’s site HTML locally &#8212; Testing my book  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link href="../../_static/css/theme.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frequently Asked Questions (FAQ)" href="../05_faq.html" />
+    <link rel="prev" title="Publishing your book online" href="../04_publish.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../../citations.html">Including citations in your book</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="../01_overview.html">The Jupyter Book Guide</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../../features/features.html">Features</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../../advanced/advanced.html">Advanced topics and guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../../test_pages/test.html">Test pages</a>
+    </li>
+    
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    
+    
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="../01-5_tour.html">Anatomy of a Jupyter Book</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../02_create.html">Create your Jupyter Book template</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../03_build.html">Build HTML for each page of your book</a>
+              </li>
+          
+        
+          
+
+              <li class="active">
+                  <a href="../04_publish.html">Publishing your book online</a>
+                  <ul>
+                  
+                      <li class="active">
+                          <a href="">Build the book’s site HTML locally</a>
+                      </li>
+                  
+                  </ul>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../05_faq.html">Frequently Asked Questions (FAQ)</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../06_advanced.html">Advanced topics and how-tos</a>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#building-your-book-with-ruby" class="nav-link">Building your book with Ruby</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#installing-ruby" class="nav-link">Installing Ruby</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#using-the-conda-forge-recipe-rb-github-pages" class="nav-link">Using the conda-forge recipe rb-github-pages</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#using-the-official-jekyll-instructions" class="nav-link">Using the official Jekyll instructions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#using-conda-forge-to-install-ruby-from-scratch" class="nav-link">Using conda-forge to install Ruby from scratch</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#install-clang-compilers" class="nav-link">Install clang compilers</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h6">
+            <a href="#on-osx" class="nav-link">On OSX</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h6">
+            <a href="#on-linux" class="nav-link">On Linux</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#install-ruby-plugins" class="nav-link">Install Ruby plugins</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#build-your-book-s-html" class="nav-link">Build your book’s HTML</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#building-your-book-html-with-containers" class="nav-link">Building your book HTML with Containers</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#docker" class="nav-link">Docker</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#singularity" class="nav-link">Singularity</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="build-the-book-s-site-html-locally">
+<h1>Build the book’s site HTML locally<a class="headerlink" href="#build-the-book-s-site-html-locally" title="Permalink to this headline">¶</a></h1>
+<p>This section covers how to build the HTML for your book locally, instead of
+using GitHub Pages. This allows you to host the book’s HTML anywhere you like.</p>
+<p>In order to locally build your book’s HTML with Jekyll, you’ll take one of two approaches:</p>
+<ol class="simple">
+<li><p>Install a copy of the Ruby language (which is a free open-source language, but can be a pain to install).</p></li>
+<li><p>Use a container software (Docker or Singularity) along with a Docker image that we’ve
+prepared for you
+<a class="reference external" href="https://github.com/jupyter/jupyter-book/blob/master/jupyter_book/Dockerfile">from this Dockerfile</a>.</p></li>
+</ol>
+<p>We recommend installing Ruby with one of the supplied methods first, and if this fails,
+try installing with a container tool such as Docker.</p>
+<!-- #region --><div class="section" id="building-your-book-with-ruby">
+<h2>Building your book with Ruby<a class="headerlink" href="#building-your-book-with-ruby" title="Permalink to this headline">¶</a></h2>
+<p>The most straightforward way to build your book’s HTML is to install
+Ruby and Jekyll.</p>
+<p>In this case, you’ll need Ruby, an open-source programming language, to build your book’s
+HTML. You won’t need to know how to program in Ruby, we’ll just use some tools that utilize
+Ruby’s libraries.</p>
+<div class="section" id="installing-ruby">
+<h3>Installing Ruby<a class="headerlink" href="#installing-ruby" title="Permalink to this headline">¶</a></h3>
+<p>There are a few different methods for installing Ruby, and their ease will depend
+on the operating system that you’re using (in general, <code class="docutils literal notranslate"><span class="pre">*nix</span></code> platforms are more
+straightforward to use for installing Ruby).</p>
+<p>In the following sections we’ll cover a few ways to install Ruby, they are roughly ordered
+from most-straightforward to most-difficult. Once you’ve finished those steps,
+head to <a class="reference external" href="#install-ruby-plugins">install ruby plugins</a> and follow the directions.</p>
+<div class="section" id="using-the-conda-forge-recipe-rb-github-pages">
+<h4>Using the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> recipe <code class="docutils literal notranslate"><span class="pre">rb-github-pages</span></code><a class="headerlink" href="#using-the-conda-forge-recipe-rb-github-pages" title="Permalink to this headline">¶</a></h4>
+<p>The easiest way to install Ruby on <code class="docutils literal notranslate"><span class="pre">*nix</span></code> systems is to use
+the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager. On some systems the following should work:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge rb-github-pages
+</pre></div>
+</div>
+<p>This will install pre-compiled binaries for the Ruby package GitHub pages, Jekyll, and all of their dependencies. If this works for you, you can skip straight to <a class="reference external" href="#install-ruby-plugins">the section using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code></a>.</p>
+</div>
+<div class="section" id="using-the-official-jekyll-instructions">
+<h4>Using the official Jekyll instructions<a class="headerlink" href="#using-the-official-jekyll-instructions" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://jekyllrb.com">Jekyll Documentation</a> provides their own set of instructions
+for how to install Ruby locally on your system. These are a bit more involved, but in
+general should work for many operating systems. Here are a few links to OS-specific
+instructions.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jekyllrb.com/docs/installation/macos/">MacOS Instructions</a></p></li>
+<li><p><a class="reference external" href="https://jekyllrb.com/docs/installation/ubuntu/">Ubuntu Instructions</a></p></li>
+<li><p><a class="reference external" href="https://jekyllrb.com/docs/installation/other-linux">Linux (non-Ubuntu) Instructions</a></p></li>
+<li><p><a class="reference external" href="https://jekyllrb.com/docs/installation/windows/">Windows Instructions</a></p></li>
+</ul>
+</div>
+<div class="section" id="using-conda-forge-to-install-ruby-from-scratch">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> to install Ruby from scratch<a class="headerlink" href="#using-conda-forge-to-install-ruby-from-scratch" title="Permalink to this headline">¶</a></h4>
+<p>If you are on a platform for which the <code class="docutils literal notranslate"><span class="pre">rb-github-pages</span></code> package isn’t available, you can also try install Ruby and a C++ compiler manually using <em><code class="docutils literal notranslate"><span class="pre">conda</span></code></em>, as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge ruby
+</pre></div>
+</div>
+<p>Once you have Ruby installed, the conda-built clang compiler for your
+system needs to be installed. Details depend on your OS and are shown below.</p>
+<div class="section" id="install-clang-compilers">
+<h5>Install clang compilers<a class="headerlink" href="#install-clang-compilers" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="on-osx">
+<h6>On OSX<a class="headerlink" href="#on-osx" title="Permalink to this headline">¶</a></h6>
+<p>Two steps are needed on OSX. First, install the <em><code class="docutils literal notranslate"><span class="pre">conda</span></code>’s</em> clang compiler:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge clangxx_osx-64
+</pre></div>
+</div>
+<p>If you are running OSX 10.14 (Mojave) you also need to install system libraries in
+the default <code class="docutils literal notranslate"><span class="pre">*nix</span></code> locations by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-linux">
+<h6>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h6>
+<p>Install <em><code class="docutils literal notranslate"><span class="pre">conda</span></code>’s</em> clang compiler:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge gxx_linux-64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="install-ruby-plugins">
+<h3>Install Ruby plugins<a class="headerlink" href="#install-ruby-plugins" title="Permalink to this headline">¶</a></h3>
+<p>Regardless of the approach used above, you’ll next install
+the Ruby plugins for your specific
+book. To do so, change into your book’s directory, and run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install
+</pre></div>
+</div>
+<p>which will install the following things:</p>
+<ul class="simple">
+<li><p>Bundler (a Ruby dependency management tool) if it is not already installed
+(e.g. by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">rb-github-pages</span></code>)</p></li>
+<li><p>A collection of Jekyll plugins for your book</p></li>
+</ul>
+</div>
+<div class="section" id="build-your-book-s-html">
+<h3>Build your book’s HTML<a class="headerlink" href="#build-your-book-s-html" title="Permalink to this headline">¶</a></h3>
+<p>Once you have Ruby installed, you can preview your book’s
+site locally by running this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">serve</span>
+</pre></div>
+</div>
+<p>This should run Jekyll, building your site, and then open up a port on your computer with a live version of the book.
+It will <strong>generate your book’s HTML</strong> in the <code class="docutils literal notranslate"><span class="pre">_site/</span></code> folder. This collection of files makes a
+functioning <strong>static website</strong>.</p>
+<p>If you’d like to only build your book’s HTML without previewing the site, you can
+do this with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bundle <span class="nb">exec</span> jekyll serve
+</pre></div>
+</div>
+<p>Once the collection of HTML files is in <code class="docutils literal notranslate"><span class="pre">_site/</span></code>, you can move on to
+<a class="reference external" href="#Host-your-book-online">publishing your book online</a>.</p>
+</div>
+</div>
+<div class="section" id="building-your-book-html-with-containers">
+<h2>Building your book HTML with Containers<a class="headerlink" href="#building-your-book-html-with-containers" title="Permalink to this headline">¶</a></h2>
+<p>If the above steps do not work for you, then you can try building your
+book’s HTML with containers.</p>
+<p><a class="reference external" href="https://www.docker.com/resources/what-container">Containers</a> can
+provide an easier installation for many systems.
+If you are developing on a system where you have administrator privileges
+(i.e., you have <code class="docutils literal notranslate"><span class="pre">root</span></code> permissions), we recommend you use <a class="reference external" href="https://docs.docker.com/get-started/">Docker</a>.</p>
+<p>We also provide instructions for using <a class="reference external" href="https://www.sylabs.io/guides/2.6/user-guide/quick_start">Singularity</a>,
+an alternate containerization software for systems where you do not have administrator privileges.
+To learn more about using containers, please see the
+<a class="reference external" href="https://neurohackweek.github.io/docker-for-scientists/">Docker for scientists guide</a>.</p>
+<div class="section" id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<p>First, you’ll need to make sure you have Docker installed.
+There are <a class="reference external" href="https://hub.docker.com/search/?type=edition&amp;offering=community">installation instructions for each operating system</a>
+to guide you through this process.</p>
+<p>Once Docker is available on your system, you can build the image locally with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull emdupre/jupyter-book
+</pre></div>
+</div>
+<p>You can then access this image with the following command.
+Make sure to specify the full path to your Jupyter Book, rather than the relative path!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm --security-opt label:disable  <span class="se">\</span>
+   -v /full/path/to/your/book:/srv/jekyll <span class="se">\</span>
+   -p <span class="m">4000</span>:4000 <span class="se">\</span>
+   -it -u <span class="m">1000</span>:1000 <span class="se">\</span>
+   emdupre/jupyter-book
+</pre></div>
+</div>
+<p>If you navigate to <code class="docutils literal notranslate"><span class="pre">http://0.0.0.0:4000/jupyter-book/</span></code> in your browser,
+you should see a preview copy of your book.
+If you instead see an error, please try to update your local book;
+see <a class="reference external" href="https://jupyterbook.org/guide/04_faq.html#how-can-i-update-my-book">the Jupyter Book FAQ section</a>
+for more details on how to do so.</p>
+<p>You’ll find the HTML for your book in the <code class="docutils literal notranslate"><span class="pre">_site/</span></code> folder.</p>
+</div>
+<div class="section" id="singularity">
+<h3>Singularity<a class="headerlink" href="#singularity" title="Permalink to this headline">¶</a></h3>
+<p>If you are on a system where you do not have administrator privileges (such as a shared
+computing cluster), you will not be able to use Docker.
+Instead, you can use Singularity.
+First, you’ll need to check with your resource manager that Singularity is available
+on your system.</p>
+<p>You can then create a Jupyter Book Singularity image using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity build jupyter-book.simg docker://emdupre/jupyter-book
+</pre></div>
+</div>
+<p>Next, you can access this image with the following command.
+Make sure to specify the full path to your Jupyter Book, rather than the relative path!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity run -B /full/path/to/your/book:/srv/jekyll <span class="se">\</span>
+    --pwd /srv/jekyll <span class="se">\</span>
+    jupyter-book.simg
+</pre></div>
+</div>
+<p>And that’s it! If you navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:4000/jupyter-book/</span></code> in your browser,
+you should see a preview copy of your book.</p>
+<!-- #endregion --></div>
+</div>
+</div>
+
+
+              </div>
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../04_publish.html" title="previous page">Publishing your book online</a>
+    <a class='right-next' id="next-link" href="../05_faq.html" title="next page">Frequently Asked Questions (FAQ)</a>
+
+              </div>
+              
+          </main>
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/theme.js"></script>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright 2018, Chris Holdgraf.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
