@@ -51,10 +51,6 @@
     
     
     <li class="nav-item ">
-        <a class="nav-link" href="../citations.html">Including citations in your book</a>
-    </li>
-    
-    <li class="nav-item ">
         <a class="nav-link" href="../guide/01_overview.html">The Jupyter Book Guide</a>
     </li>
     
@@ -93,8 +89,6 @@
   
 
   <ul class="nav bd-sidenav">
-      
-      
       
       
       
@@ -182,17 +176,11 @@
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
 
-
-<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
             <a href="#how-to-use-citations" class="nav-link">How to use citations</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#references" class="nav-link">References</a>
         </li>
     
     </ul>
@@ -205,14 +193,13 @@
                 
   <div class="section" id="including-citations-in-your-book">
 <h1>Including citations in your book<a class="headerlink" href="#including-citations-in-your-book" title="Permalink to this headline">¶</a></h1>
-<p>✨<strong>experimental</strong>✨</p>
-<p>Because <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> is built on top of Jekyll, we can use the excellent
-<a class="reference external" href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a> book to
-include citations and a bibliography with your book.</p>
-<p><strong>Note that this only works if you’re building your book HTML locally and
-hosting the HTML files online somewhere</strong>. This can still use GitHub pages, but
-not the auto-generation of a cite from markdown files feature of GitHub pages.
-This is because GitHub pages doesn’t include the <code class="docutils literal notranslate"><span class="pre">jekyll-scholar</span></code> plugin.</p>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>✨✨experimental✨✨</p>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> is built on top of Sphinx, we can use the excellent
+<a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/">sphinxcontrib-bibtex</a>
+extension to include citations and a bibliography with your book.</p>
 <div class="section" id="how-to-use-citations">
 <h2>How to use citations<a class="headerlink" href="#how-to-use-citations" title="Permalink to this headline">¶</a></h2>
 <p>Including citations with your markdown files or notebooks is done in the following
@@ -221,30 +208,41 @@ way.</p>
 <li><p>Modify the file in <code class="docutils literal notranslate"><span class="pre">_bibliography/references.bib</span></code>. This has a few sample citations
 in bibtex form. Update as you wish!</p></li>
 <li><p>In your content, add the following text to include a citation</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">raw</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">cite</span> <span class="n">bibtex_shortname</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">endraw</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{cite}`mybibtexcitation`
 </pre></div>
 </div>
-<p>For example, this text: <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">raw</span> <span class="pre">%}{%</span> <span class="pre">cite</span> <span class="pre">holdgraf_evidence_2014</span> <span class="pre">%}{%</span> <span class="pre">endraw</span> <span class="pre">%}</span></code> generates this citation: {% cite holdgraf_evidence_2014 %}</p>
+<p>For example, this text</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{cite}`holdgraf_rapid_2016`
+</pre></div>
+</div>
+<p>generates this citation: <a class="bibtex reference internal" href="#holdgraf-rapid-2016" id="id1">[HdHP+16]</a></p>
 <p>You can also include multiple citations in one go, like so:</p>
-<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">raw</span> <span class="pre">%}{%</span> <span class="pre">cite</span> <span class="pre">holdgraf_evidence_2014</span> <span class="pre">holdgraf_portable_2017</span> <span class="pre">ruby</span> <span class="pre">%}{%</span> <span class="pre">endraw</span> <span class="pre">%}</span></code> becomes {% cite holdgraf_evidence_2014 holdgraf_portable_2017 ruby %}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{cite}`holdgraf_evidence_2014,holdgraf_portable_2017`
+</pre></div>
+</div>
+<p>becomes <a class="bibtex reference internal" href="#holdgraf-evidence-2014" id="id2">[HdHPK14]</a><a class="bibtex reference internal" href="#holdgraf-portable-2017" id="id3">[HCR+17]</a>.</p>
 </li>
 <li><p>Generate a bibliography on your page by using the following text:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">raw</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">bibliography</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">endraw</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography} path/to/your/bibtexfile.bib
+```
 </pre></div>
 </div>
-<p>This will generate a bibliography for your entire bibtex file. If you’d like to restrict the
-bibliography to only the citations you’ve used on a page, use the following syntax:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">raw</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">bibliography</span> <span class="o">--</span><span class="n">cited</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">endraw</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
-</div>
+<p>This will generate a bibliography for your entire bibtex file, like so:</p>
+<p id="bibtex-bibliography-features/citations-0"><dl class="citation">
+<dt class="bibtex label" id="holdgraf-portable-2017"><span class="brackets"><a class="fn-backref" href="#id3">HCR+17</a></span></dt>
+<dd><p>Christopher Ramsay Holdgraf, A. Culich, A. Rokem, F. Deniz, M. Alegro, and D. Ushizima. Portable learning environments for hands-on computational instruction using container-and cloud-based technology to teach data science. In <em>ACM International Conference Proceeding Series</em>, volume Part F1287. 2017. <a class="reference external" href="https://doi.org/10.1145/3093338.3093370">doi:10.1145/3093338.3093370</a>.</p>
+</dd>
+<dt class="bibtex label" id="holdgraf-evidence-2014"><span class="brackets"><a class="fn-backref" href="#id2">HdHPK14</a></span></dt>
+<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+</dd>
+<dt class="bibtex label" id="holdgraf-rapid-2016"><span class="brackets"><a class="fn-backref" href="#id1">HdHP+16</a></span></dt>
+<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, Jochem W. Rieger, Nathan Crone, Jack J. Lin, Robert T. Knight, and Frédéric E. Theunissen. Rapid tuning shifts in human auditory cortex enhance speech intelligibility. <em>Nature Communications</em>, 7(May):13654, 2016. URL: <a class="reference external" href="http://www.nature.com/doifinder/10.1038/ncomms13654">http://www.nature.com/doifinder/10.1038/ncomms13654</a>, <a class="reference external" href="https://doi.org/10.1038/ncomms13654">doi:10.1038/ncomms13654</a>.</p>
+</dd>
+</dl>
+</p>
 </li>
 </ol>
-<p>When your book is built, the bibliography and citations will now be included. For example,
-see the Bibliography generated below!</p>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p>{% bibliography –cited %}</p>
+<p>When your book is built, the bibliography and citations will now be included.</p>
 </div>
 </div>
 

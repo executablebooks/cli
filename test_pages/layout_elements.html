@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>This is a hidden markdown cell &#8212; Testing my book  documentation</title>
+    <title>Testing page elements &#8212; Testing my book  documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -49,10 +49,6 @@
         <a class="nav-link" href="../index.html">Home</a>
     </li>
     
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="../citations.html">Including citations in your book</a>
-    </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="../guide/01_overview.html">The Jupyter Book Guide</a>
@@ -101,12 +97,10 @@
       
       
       
-      
-      
         
           
               <li class="active">
-                  <a href="">This is a hidden markdown cell</a>
+                  <a href="">Testing page elements</a>
               </li>
           
         
@@ -138,8 +132,52 @@
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
 
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hiding-inputs" class="nav-link">Hiding inputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hiding-outputs" class="nav-link">Hiding outputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hiding-markdown" class="nav-link">Hiding markdown</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#this-is-a-hidden-markdown-cell" class="nav-link">This is a hidden markdown cell</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hiding-both-inputs-and-outputs" class="nav-link">Hiding both inputs and outputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#removing-inputs-outputs" class="nav-link">Removing inputs / outputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#removing-markdown-cells" class="nav-link">Removing markdown cells</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#full-width" class="nav-link">Full width</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#full-width-markdown" class="nav-link">Full-width markdown</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#sidebar" class="nav-link">Sidebar</a>
+        </li>
     
     </ul>
 </nav>
@@ -149,7 +187,8 @@
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
               <div>
                 
-  <p># Testing page elements</p>
+  <div class="section" id="testing-page-elements">
+<h1>Testing page elements<a class="headerlink" href="#testing-page-elements" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -170,7 +209,8 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>## Hiding inputs</p>
+<div class="section" id="hiding-inputs">
+<h2>Hiding inputs<a class="headerlink" href="#hiding-inputs" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hide input</span>
@@ -188,7 +228,9 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>## Hiding outputs</p>
+</div>
+<div class="section" id="hiding-outputs">
+<h2>Hiding outputs<a class="headerlink" href="#hiding-outputs" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hide input</span>
@@ -206,14 +248,18 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>## Hiding markdown</p>
+</div>
+<div class="section" id="hiding-markdown">
+<h2>Hiding markdown<a class="headerlink" href="#hiding-markdown" title="Permalink to this headline">¶</a></h2>
 <div class="toggle docutils container">
 </div>
 <div class="section" id="this-is-a-hidden-markdown-cell">
-<h1>This is a hidden markdown cell<a class="headerlink" href="#this-is-a-hidden-markdown-cell" title="Permalink to this headline">¶</a></h1>
+<h3>This is a hidden markdown cell<a class="headerlink" href="#this-is-a-hidden-markdown-cell" title="Permalink to this headline">¶</a></h3>
 <p>It should be hidden!</p>
 </div>
-<p>## Hiding both inputs and outputs</p>
+</div>
+<div class="section" id="hiding-both-inputs-and-outputs">
+<h2>Hiding both inputs and outputs<a class="headerlink" href="#hiding-both-inputs-and-outputs" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide_input tag_hide_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -230,7 +276,9 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>## Removing inputs / outputs</p>
+</div>
+<div class="section" id="removing-inputs-outputs">
+<h2>Removing inputs / outputs<a class="headerlink" href="#removing-inputs-outputs" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove input</span>
@@ -265,11 +313,14 @@
 <div class="cell_output docutils container">
 </div>
 </div>
+</div>
 <div class="section" id="removing-markdown-cells">
-<h1>Removing markdown cells<a class="headerlink" href="#removing-markdown-cells" title="Permalink to this headline">¶</a></h1>
+<h2>Removing markdown cells<a class="headerlink" href="#removing-markdown-cells" title="Permalink to this headline">¶</a></h2>
 <p>Remove the markdown cell below (below should not be there)</p>
 <p>This markdown should be removed</p>
-<p>## Full width</p>
+</div>
+<div class="section" id="full-width">
+<h2>Full width<a class="headerlink" href="#full-width" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_full_width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## A full-width square figure</span>
@@ -305,11 +356,13 @@
 </div>
 </div>
 <div class="section" id="full-width-markdown">
-<h1>Full-width markdown<a class="headerlink" href="#full-width-markdown" title="Permalink to this headline">¶</a></h1>
+<h2>Full-width markdown<a class="headerlink" href="#full-width-markdown" title="Permalink to this headline">¶</a></h2>
 <p>This is some markdown that should be shown at full width.</p>
 <p>Here’s the Jupyter logo:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png" /></p>
-<p>## Sidebar</p>
+</div>
+<div class="section" id="sidebar">
+<h2>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_popout docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## code cell in the sidebar with output</span>
@@ -337,6 +390,7 @@
 <p>how does it look?</p>
 <p>Markdown cell with images in sidebar</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" style="max-width:200px" /></div>
+</div>
 <div class="section" id="more-content-after-the-popouts">
 <h1>More content after the popouts<a class="headerlink" href="#more-content-after-the-popouts" title="Permalink to this headline">¶</a></h1>
 <p>This is extra content after the popouts to see if cells overlap and such.
