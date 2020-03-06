@@ -57,9 +57,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Two + Two is: 4\n",
+      "Two + Two is: 4\n",
+      "Two + Two is: 4\n"
+     ]
+    }
+   ],
    "source": [
     "# And here's some actual python code\n",
     "print(\"Two + Two is: {}\".format(2+2))\n",
@@ -84,7 +94,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.3"
+   "version": "3.6.10"
   },
   "widgets": {
    "application/vnd.jupyter.widget-state+json": {
