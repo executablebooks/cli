@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -20,7 +21,10 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script >var copybuttonSkipText = '>>> ';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -173,7 +177,7 @@
 <h1>Build HTML for your book<a class="headerlink" href="#build-html-for-your-book" title="Permalink to this headline">¶</a></h1>
 <p>Once you’ve added content and configured your book, it’s time to
 build the HTML for each <strong>page</strong> of your book. We’ll use the
-<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span></code> command-line tool for this. In the <em>next step</em>,
+<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> command-line tool for this. In the <em>next step</em>,
 we’ll stitch these HTML pages into a book.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
@@ -189,7 +193,7 @@ in the <code class="docutils literal notranslate"><span class="pre">_config.yml<
 defined your book’s structure in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>, you can build
 the HTML for your book.</p>
 <p>Do so by running the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build mybookname/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book build mybookname/
 </pre></div>
 </div>
 <p>This will generate a fully-functioning HTML site using a <strong>static site generator</strong>.
