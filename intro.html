@@ -118,6 +118,10 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#the-components-of-jupyter-book-2-0" class="nav-link">The components of Jupyter Book 2.0</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#get-started" class="nav-link">Get started</a>
         </li>
     
@@ -164,6 +168,26 @@ cross-references, and equations.</p></li>
 </li>
 </ul>
 <p>Currently it accomplishes a subset of these features.</p>
+<div class="section" id="the-components-of-jupyter-book-2-0">
+<h2>The components of Jupyter Book 2.0<a class="headerlink" href="#the-components-of-jupyter-book-2-0" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter Book 2.0 is a wrapper around a collection of tools in the Python
+ecosystem that make it easier to publish computational documents. Here are
+a few key pieces:</p>
+<ul class="simple">
+<li><p>It uses <a class="reference external" href="https://myst-parser.readthedocs.io/">the MyST markdown language</a> in
+markdown and notebook documents. This allows users to write rich,
+publication-quality markup in their documents.</p></li>
+<li><p>It uses <a class="reference external" href="https://myst-nb.readthedocs.io/">the MyST-NB package</a> to parse and
+read-in notebooks so they are built into your book.</p></li>
+<li><p>It uses <a class="reference external" href="https://www.sphinx-doc.org/en/master/">the Sphinx documentation engine</a>
+to build outputs from your book’s content.</p></li>
+<li><p>It uses a slightly-modified version of the <a class="reference external" href="https://pandas-sphinx-theme.readthedocs.io/en/latest/">PyData Sphinx theme</a>
+for beautiful HTML output.</p></li>
+<li><p>It uses a collection of Sphinx plugins and tools to add new functionality.</p></li>
+</ul>
+<p>For more information about the project behind many of these tools, see
+<a class="reference external" href="https://ebp.jupyterbook.org/">The Executable Book Project</a> documentation.</p>
+</div>
 <div class="section" id="get-started">
 <h2>Get started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
 <p>To get started, check out the pages above. These are major sections of the documentation.
