@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Books with Jupyter &#8212; Jupyter Book  documentation</title>
+    <title>Books with Jupyter 2.0 &#8212; Jupyter Book  documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css" />
@@ -56,15 +56,15 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="features/features.html">Features</a>
-    </li>
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="advanced/advanced.html">Advanced topics and guides</a>
+        <a class="nav-link" href="features/index.html">Features</a>
     </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="test_pages/test.html">Test pages</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="old_docs/index.html">Old documentation pages</a>
     </li>
     
     
@@ -113,7 +113,15 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#get-started" class="nav-link">Get started</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#install" class="nav-link">Install</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#develop" class="nav-link">Develop</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -128,20 +136,66 @@
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
               <div>
                 
-  <div class="section" id="books-with-jupyter">
-<h1>Books with Jupyter<a class="headerlink" href="#books-with-jupyter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="books-with-jupyter-2-0">
+<h1>Books with Jupyter 2.0<a class="headerlink" href="#books-with-jupyter-2-0" title="Permalink to this headline">¶</a></h1>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>This is an early prototype tool that may evolve quickly. Your feedback is
+very welcome! To give it, please <a class="reference external" href="https://github.com/ExecutableBookProject/cli/issues/new">open an issue in the CLI repository</a></p>
+</div>
+<p>This tool provides a command-line interface and a Python API that lets users
+do the following:</p>
+<ul class="simple">
+<li><p>Write their content in markdown files, Jupyter Notebooks, or rST files.</p></li>
+<li><p>Include computational elements in any of the above (e.g. executable
+code cells along with their outputs)</p></li>
+<li><p>Include rich syntax for publication features, such as citations,
+cross-references, and equations.</p></li>
+<li><p>Using a simple command, convert this content into:</p>
+<ul>
+<li><p>A web-based interactive book</p></li>
+<li><p>A publication-quality PDF</p></li>
+</ul>
+</li>
+</ul>
+<p>Currently it accomplishes a subset of these features.</p>
+<div class="section" id="get-started">
+<h2>Get started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<p>To get started, check out the pages above. These are major sections of the documentation.
+In particular, <a class="reference internal" href="guide/01_overview.html"><span class="doc">The Jupyter Book Guide</span></a> is a good way to get familiar with this tool and how to
+create your own books.</p>
+</div>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p>Install this tool directly from the Master branch. When it has stabilized
+we will begin creating releases.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ExecutableBookProject</span><span class="o">/</span><span class="n">cli</span><span class="o">.</span><span class="n">git</span><span class="nd">@master</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="develop">
+<h2>Develop<a class="headerlink" href="#develop" title="Permalink to this headline">¶</a></h2>
+<p>First clone the package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ExecutableBookProject</span><span class="o">/</span><span class="n">cli</span>
+<span class="n">cd</span> <span class="n">cli</span>
+</pre></div>
+</div>
+<p>Next, install:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="use">
 <h2>Use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span>
-<span class="n">jb</span> <span class="n">build</span>
-</pre></div>
+<p>The primary way to use this tool is via the command line. It provides a
+top-level command called <code class="docutils literal notranslate"><span class="pre">jb</span></code>, and a number of sub-commands. Run <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">-h</span></code> for
+more information.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>In the future this will probably be renamed to <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code>, but it remains
+<code class="docutils literal notranslate"><span class="pre">jb</span></code> for now to avoid confusion with the current <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> project.</p>
 </div>
+<p>For more information on how to use this tool, see <a class="reference internal" href="guide/01_overview.html"><span class="doc">The Jupyter Book Guide</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

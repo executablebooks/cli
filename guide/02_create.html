@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Create your Jupyter Book template &#8212; Jupyter Book  documentation</title>
+    <title>Anatomy of a Jupyter Book &#8212; Jupyter Book  documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Build HTML for each page of your book" href="03_build.html" />
-    <link rel="prev" title="Anatomy of a Jupyter Book" href="01-5_tour.html" />
+    <link rel="next" title="Build HTML for your book" href="03_build.html" />
+    <link rel="prev" title="The Jupyter Book Guide" href="01_overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -57,15 +57,15 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="../features/features.html">Features</a>
-    </li>
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+        <a class="nav-link" href="../features/index.html">Features</a>
     </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../old_docs/index.html">Old documentation pages</a>
     </li>
     
     
@@ -95,20 +95,14 @@
       
         
           
-              <li class="">
-                  <a href="01-5_tour.html">Anatomy of a Jupyter Book</a>
-              </li>
-          
-        
-          
               <li class="active">
-                  <a href="">Create your Jupyter Book template</a>
+                  <a href="">Anatomy of a Jupyter Book</a>
               </li>
           
         
           
               <li class="">
-                  <a href="03_build.html">Build HTML for each page of your book</a>
+                  <a href="03_build.html">Build HTML for your book</a>
               </li>
           
         
@@ -152,15 +146,27 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#by-starting-with-a-minimal-book" class="nav-link">by starting with a minimal book</a>
+            <a href="#create-a-template-jupyter-book" class="nav-link">Create a template Jupyter Book</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#by-modifying-the-demo-book" class="nav-link">by modifying the Demo Book</a>
+            <a href="#inspecting-your-book-s-contents" class="nav-link">Inspecting your book’s contents</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#by-using-a-pre-existing-book-configuration" class="nav-link">by using a pre-existing book configuration</a>
+            <a href="#book-configuration" class="nav-link">Book configuration</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#table-of-contents" class="nav-link">Table of Contents</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#book-content" class="nav-link">Book content</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#book-bibliography-for-citations" class="nav-link">Book bibliography for citations</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -175,71 +181,121 @@
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
               <div>
                 
-  <div class="section" id="create-your-jupyter-book-template">
-<h1>Create your Jupyter Book template<a class="headerlink" href="#create-your-jupyter-book-template" title="Permalink to this headline">¶</a></h1>
-<p>This page covers how to create a Jupyter Book with your own content.
-You’ve got three primary ways to create your Jupyter Book.</p>
-<div class="section" id="by-starting-with-a-minimal-book">
-<h2>by starting with a minimal book<a class="headerlink" href="#by-starting-with-a-minimal-book" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="anatomy-of-a-jupyter-book">
+<h1>Anatomy of a Jupyter Book<a class="headerlink" href="#anatomy-of-a-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter-Book comes with a demo book so that you can see how the content files
+are used in the book. We’ll begin with a quick tour of these files, as they are
+the pieces that you’ll modify for your own book.</p>
 <p>Running the following command will create a new Jupyter Book with a few
 content pages and a Table of Contents to get you started:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book create mybookname
+<div class="section" id="create-a-template-jupyter-book">
+<h2>Create a template Jupyter Book<a class="headerlink" href="#create-a-template-jupyter-book" title="Permalink to this headline">¶</a></h2>
+<p>We’ll use a small template book to show what kinds of files you might put inside your own.
+To create a new Jupyter Book, type the following at the command-line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb create mybookname
 </pre></div>
 </div>
-<p>This will create a new book using your content in <code class="docutils literal notranslate"><span class="pre">mybookname/</span></code>. You’ll then need to</p>
-<ol class="simple">
-<li><p>Add your content to <code class="docutils literal notranslate"><span class="pre">mybookname/content/</span></code></p></li>
-<li><p>Modify <code class="docutils literal notranslate"><span class="pre">mybookname/_data/toc.yml</span></code> to match your content</p></li>
-<li><p>Modify <code class="docutils literal notranslate"><span class="pre">mybookname/_config.yml</span></code> to the configuration you’d like</p></li>
-</ol>
-<p>Note that if you choose to create the book template and later add content
-to it, you can quickly <strong>generate a basic Table of Contents</strong> by running
-the following command:</p>
+<p>A new book will be created at the path that you’ve given (in this case, <code class="docutils literal notranslate"><span class="pre">mybookname/</span></code>).</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>If you would like to quickly <strong>generate a basic Table of Contents</strong> YAML file,
+run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book toc mybookname/
 </pre></div>
 </div>
 </div>
-<div class="section" id="by-modifying-the-demo-book">
-<h2>by modifying the Demo Book<a class="headerlink" href="#by-modifying-the-demo-book" title="Permalink to this headline">¶</a></h2>
-<p>If you’d like to see a more fully-functioning demo book for inspiration, you can
-create the book that lives at the <a class="reference external" href="https://jupyterbook.org">jupyter-book website</a>
-by adding the <code class="docutils literal notranslate"><span class="pre">--demo</span></code> flag:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book create mybookname --demo
+</div>
+<div class="section" id="inspecting-your-book-s-contents">
+<h2>Inspecting your book’s contents<a class="headerlink" href="#inspecting-your-book-s-contents" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a quick look at some important files in the demo book you created:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybookname/
+├── _config.yml
+├── _toc.yml
+├── content.md
+├── intro.md
+├── markdown.md
+├── notebooks.ipynb
+├── references.bib
+└── syntax.md
 </pre></div>
 </div>
-<p>See the previous section for a description of all of the relevant files you
-should modify for your book.</p>
+<p>Here’s a quick rundown of the files you can modify for yourself, and that
+ultimately make up your book.</p>
 </div>
-<div class="section" id="by-using-a-pre-existing-book-configuration">
-<h2>by using a pre-existing book configuration<a class="headerlink" href="#by-using-a-pre-existing-book-configuration" title="Permalink to this headline">¶</a></h2>
-<p>If you’ve used Jupyter Book before, you can quickly generate a <em>new</em> book using a pre-existing
-set of folders and files. These are all available as arguments in the command line interface.</p>
-<p>For example, if you have your book’s content in a folder structure like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myoldbook/
-├── content
-│   ├── root_test.md
-│   └── tests
-├── _data
-│   └── toc.yml
-├── images
-│   └── tests
-├── mylicense.md
-├── myextrafolder
-│   └── myextrafile.txt
-└── config.yml
+<div class="section" id="book-configuration">
+<h2>Book configuration<a class="headerlink" href="#book-configuration" title="Permalink to this headline">¶</a></h2>
+<p>All of the configuration for your book is in the following file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybookname/
+├── _config.yml
 </pre></div>
 </div>
-<p>You can generate a Jupyter Book from it with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book create mybookname --content-folder myoldbook/content <span class="se">\</span>
-                               --toc myoldbook/_data/toc.yml <span class="se">\</span>
-                               --config myoldbook/_config.yml <span class="se">\</span>
-                               --license myoldbook/mylicense.md <span class="se">\</span>
-                               --extra-files myoldbook/myextrafolder
+<p>You can define metadata for your book (such as its title), add
+a book logo, turn on different “interactive” buttons (such as a
+Binder button for pages built from a Jupyter Notebook), and more.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter Book uses your Table of Contents to define the structure of your book.
+For example, your chapters, sub-chapters, etc.</p>
+<p>The Table of Contents lives at this location:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybookname/
+├── _toc.yml
 </pre></div>
 </div>
-<p>This will create a new Jupyter Book using these files. In this case, you need to ensure
-that the values in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> are correct, and that the Table of Contents (<code class="docutils literal notranslate"><span class="pre">toc.yml</span></code>) file
-has the structure that you want.</p>
+<p>This is a YAML file with a collection of pages, each one linking to a
+file in your <code class="docutils literal notranslate"><span class="pre">content/</span></code> folder. Here’s an example of a few pages defined in <code class="docutils literal notranslate"><span class="pre">toc.yml</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">features/features</span>
+  <span class="nt">sections</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">features/markdown</span>
+  <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">features/notebooks</span>
+</pre></div>
+</div>
+<p>The top-most level of your TOC file are <strong>book chapters</strong>. Above, this is the
+“Features” page.
+Note that in this case the title of the page is not explicitly specified but
+is inferred from the source files.
+This behavior is controlled by the <code class="docutils literal notranslate"><span class="pre">page_titles</span></code> setting in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>
+(see <a class="reference internal" href="../old_docs/features/titles.html"><span class="doc">the titles feature page</span></a> for more details).
+Each chapter can have
+several sections (defined in <code class="docutils literal notranslate"><span class="pre">sections:</span></code>) and each section can have several sub-sections
+(which would be define with a deeper level of <code class="docutils literal notranslate"><span class="pre">sections:</span></code>). In addition, you can
+use a few extra YAML values to control the behavior of Jupyter-Book (for example,
+<code class="docutils literal notranslate"><span class="pre">not_numbered:</span> <span class="pre">true</span></code> will prevent Jupyter Book from numbering the pages in that chapter).</p>
+<p>Each item in the YAML file points to a single content file. The links
+should be <strong>relative to your book’s folder and with no extension.</strong></p>
+<p>For example, in the example above there is a file in
+<code class="docutils literal notranslate"><span class="pre">mybookname/features/notebooks.ipynb</span></code>. The TOC entry that points to
+this file is here:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/notebooks</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="book-content">
+<h2>Book content<a class="headerlink" href="#book-content" title="Permalink to this headline">¶</a></h2>
+<p>The markdown and ipynb files in your folder is your book’s content. Some content
+files for the demo book are shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybookname/
+...
+├── features.md
+└── notebooks.ipynb
+</pre></div>
+</div>
+<p>Note that the content files are either <strong>Jupyter Notebooks</strong> or <strong>Markdown</strong>
+files. These are the files that define “pages” in your book.</p>
+<p>You can store these files in whatever collection of folders you’d like, note that
+the <em>structure</em> of your book when it is built will depend solely on the order of
+items in your <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file (see below section)</p>
+</div>
+<div class="section" id="book-bibliography-for-citations">
+<h2>Book bibliography for citations<a class="headerlink" href="#book-bibliography-for-citations" title="Permalink to this headline">¶</a></h2>
+<p>If you’d like to build a bibliography for your book, you can do so by including
+the following file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybookname/
+└── references.bib
+</pre></div>
+</div>
+<p>This BiBTex file can be used to insert citations into your book’s pages. For more information,
+see <a class="reference internal" href="../features/citations.html"><span class="doc">Including citations in your book</span></a>.</p>
 </div>
 <div class="section" id="next-step-convert-your-book-content-into-html">
 <h2>Next step: convert your book content into HTML<a class="headerlink" href="#next-step-convert-your-book-content-into-html" title="Permalink to this headline">¶</a></h2>
@@ -254,8 +310,8 @@ section.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="01-5_tour.html" title="previous page">Anatomy of a Jupyter Book</a>
-    <a class='right-next' id="next-link" href="03_build.html" title="next page">Build HTML for each page of your book</a>
+    <a class='left-prev' id="prev-link" href="01_overview.html" title="previous page">The Jupyter Book Guide</a>
+    <a class='right-next' id="next-link" href="03_build.html" title="next page">Build HTML for your book</a>
 
               </div>
               

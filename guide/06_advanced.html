@@ -25,7 +25,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Features" href="../features/features.html" />
+    <link rel="next" title="Features" href="../features/index.html" />
     <link rel="prev" title="Frequently Asked Questions (FAQ)" href="05_faq.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,15 +57,15 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="../features/features.html">Features</a>
-    </li>
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+        <a class="nav-link" href="../features/index.html">Features</a>
     </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../old_docs/index.html">Old documentation pages</a>
     </li>
     
     
@@ -96,19 +96,13 @@
         
           
               <li class="">
-                  <a href="01-5_tour.html">Anatomy of a Jupyter Book</a>
+                  <a href="02_create.html">Anatomy of a Jupyter Book</a>
               </li>
           
         
           
               <li class="">
-                  <a href="02_create.html">Create your Jupyter Book template</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="03_build.html">Build HTML for each page of your book</a>
+                  <a href="03_build.html">Build HTML for your book</a>
               </li>
           
         
@@ -176,14 +170,6 @@
                 
         <li class="nav-item toc-entry toc-h3">
             <a href="#the-structure-of-a-single-page" class="nav-link">The structure of a single page</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#adding-an-external-link-in-your-toc" class="nav-link">Adding an external link in your TOC</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#extra-toc-entries" class="nav-link">Extra TOC entries</a>
         </li>
     
             </ul>
@@ -264,11 +250,12 @@ running this command, you can use the <code class="docutils literal notranslate"
 </pre></div>
 </div>
 <p>This will overwrite the contents of <code class="docutils literal notranslate"><span class="pre">toc.yml</span></code> with the new TOC.</p>
-<blockquote>
-<div><p>Note: this will make some assumptions about how you’d like your book to
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>this will make some assumptions about how you’d like your book to
 be structured. We recommend using this command as a starting point, and
 then customizing your TOC how you’d like.</p>
-</div></blockquote>
+</div>
 </div>
 <div class="section" id="adding-tags-to-notebook-cells-based-on-their-content">
 <h2>Adding tags to notebook cells based on their content<a class="headerlink" href="#adding-tags-to-notebook-cells-based-on-their-content" title="Permalink to this headline">¶</a></h2>
@@ -320,32 +307,8 @@ as you like.</p>
 <h3>The structure of a single page<a class="headerlink" href="#the-structure-of-a-single-page" title="Permalink to this headline">¶</a></h3>
 <p>Below is all of the possible fields in the entry of a single page in <code class="docutils literal notranslate"><span class="pre">toc.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mytitle</span>   <span class="c1"># Title of chapter or section</span>
-  <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/myurl</span>  <span class="c1"># URL of section relative to the /content/ folder.</span>
-  <span class="nt">not_numbered</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># if the section shouldn&#39;t have a number in the sidebar</span>
-    <span class="nt">(e.g. Introduction or appendices) (default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true)</span>
-  <span class="nt">expand_sections</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># if you&#39;d like the sections of this chapter to always</span>
-    <span class="nt">be expanded in the sidebar. (default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true)</span>
+  <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myurl</span>  <span class="c1"># URL of section relative to the /content/ folder.</span>
   <span class="nt">sections</span><span class="p">:</span>  <span class="c1"># Contains an optional list of more entries that make up the chapter&#39;s sections</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="adding-an-external-link-in-your-toc">
-<h3>Adding an external link in your TOC<a class="headerlink" href="#adding-an-external-link-in-your-toc" title="Permalink to this headline">¶</a></h3>
-<p>To add an external link in your TOC, simply make the url point to a fully-resolved
-URL and add the <code class="docutils literal notranslate"><span class="pre">external:</span> <span class="pre">true</span></code> field. Here’s an example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Jupyter Homepage</span>   <span class="c1"># Title of chapter or section</span>
-  <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://jupyter.org</span>  <span class="c1"># URL of external site</span>
-  <span class="nt">external</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="extra-toc-entries">
-<h3>Extra TOC entries<a class="headerlink" href="#extra-toc-entries" title="Permalink to this headline">¶</a></h3>
-<p>These are special entries that will trigger different behavior if they are
-in the <code class="docutils literal notranslate"><span class="pre">toc.yml</span></code> file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">search</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># Will provide a link to a search page</span>
-<span class="p p-Indicator">-</span> <span class="nt">divider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>  <span class="c1"># Will insert a divider in the sidebar</span>
-<span class="p p-Indicator">-</span> <span class="nt">header</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">My Header</span>  <span class="c1"># Will insert a header with no link in the sidebar</span>
 </pre></div>
 </div>
 </div>
@@ -375,7 +338,7 @@ always stays up-to-date.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="05_faq.html" title="previous page">Frequently Asked Questions (FAQ)</a>
-    <a class='right-next' id="next-link" href="../features/features.html" title="next page">Features</a>
+    <a class='right-next' id="next-link" href="../features/index.html" title="next page">Features</a>
 
               </div>
               

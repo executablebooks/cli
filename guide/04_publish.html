@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Build the book’s site HTML locally" href="publish/book-html.html" />
-    <link rel="prev" title="Build HTML for each page of your book" href="03_build.html" />
+    <link rel="prev" title="Build HTML for your book" href="03_build.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -57,15 +57,15 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="../features/features.html">Features</a>
-    </li>
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+        <a class="nav-link" href="../features/index.html">Features</a>
     </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../old_docs/index.html">Old documentation pages</a>
     </li>
     
     
@@ -96,19 +96,13 @@
         
           
               <li class="">
-                  <a href="01-5_tour.html">Anatomy of a Jupyter Book</a>
+                  <a href="02_create.html">Anatomy of a Jupyter Book</a>
               </li>
           
         
           
               <li class="">
-                  <a href="02_create.html">Create your Jupyter Book template</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="03_build.html">Build HTML for each page of your book</a>
+                  <a href="03_build.html">Build HTML for your book</a>
               </li>
           
         
@@ -160,17 +154,11 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#when-should-you-build-the-html-locally" class="nav-link">When should you build the HTML locally?</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#prerequisites" class="nav-link">Prerequisites</a>
-        </li>
-    
-            </ul>
+            <a href="#create-an-online-repository-for-your-book" class="nav-link">Create an online repository for your book</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#create-an-online-repository-for-your-book" class="nav-link">Create an online repository for your book</a>
+            <a href="#host-with-github-pages" class="nav-link">Host with github-pages</a>
         </li>
     
     </ul>
@@ -183,38 +171,16 @@
                 
   <div class="section" id="publishing-your-book-online">
 <h1>Publishing your book online<a class="headerlink" href="#publishing-your-book-online" title="Permalink to this headline">¶</a></h1>
-<p>Now that you’ve built the HTML for each <strong>page</strong>, it’s
-time to stitch together these pages into HTML for a <strong>book</strong>
-and host it online. This means building the left Table of Contents and
-stitching each of your pages together.</p>
-<p>You’ve got two options to do this.</p>
-<ol>
-<li><p><strong>Option 1: Build your book’s HTML manually and host wherever you like</strong>:</p>
-<p>Building your book’s site locally lets you preview your book locally before you
-push it online. It also gives you more functionality than using
-GitHub Pages to build your book. However, it also requires you to install
-Ruby (an open source programming language) or to run Ruby with a containerization
-platform like Docker or Singularity.</p>
-<p>See the <a class="reference internal" href="publish/book-html.html"><span class="doc">guide to building your book's HTML manually</span></a> for information
-on how to do this.</p>
-</li>
-</ol>
-<div class="section" id="when-should-you-build-the-html-locally">
-<h2>When should you build the HTML locally?<a class="headerlink" href="#when-should-you-build-the-html-locally" title="Permalink to this headline">¶</a></h2>
-<p>You might ask: if GitHub pages can build my site automatically from the intermediate files, why
-build it locally? The main reason for this is that you get more flexibility by building locally
-and serving raw HTML, as opposed to auto-building the site with GitHub-pages.</p>
-<p>If you wish to use any <strong>extra Jekyll plugins</strong>, such as the <code class="docutils literal notranslate"><span class="pre">jekyll-scholar</span></code> plugin that
-enables you to add citations and bibliographies, then you need to build your site
-locally as HTML. GitHub Pages doesn’t let you enable any extra plugins if it auto-builds your site.
-In addition, if you’d like to <strong>host your book’s HTML anyhwere other than GitHub Pages</strong>,
-then you’ll need to build the book’s HTML on your own.</p>
-<div class="section" id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>Now that you’ve built the HTML for your book, it’s time to host it online.
+The best way to do this is with a service that hosts <strong>static websites</strong>
+(because that’s what you have just created with Jupyter Book).</p>
+<p>There are many options for doing this, and the next sections cover some of the
+more popular ones.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
 <p>Ensure that your the HTML has been built for each page of your book
 (see <a class="reference internal" href="03_build.html"><span class="doc">the previous section</span></a>). There should be a collection of HTML
-files in your book’s <code class="docutils literal notranslate"><span class="pre">_build/</span></code> folder.</p>
-</div>
+files in your book’s <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder.</p>
 </div>
 <div class="section" id="create-an-online-repository-for-your-book">
 <h2>Create an <em>online</em> repository for your book<a class="headerlink" href="#create-an-online-repository-for-your-book" title="Permalink to this headline">¶</a></h2>
@@ -233,10 +199,10 @@ initialization you’d like.</p></li>
 </pre></div>
 </div>
 </li>
-<li><p>Copy all of your book files and folders (what was created when you ran <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mybook</span></code>)
-into the new repository. For example, if you created your book locally with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mylocalbook</span></code>
+<li><p>Copy all of your book files and folders (what was created when you ran <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">mybook</span></code>)
+into the new repository. For example, if you created your book locally with <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">create</span> <span class="pre">mylocalbook</span></code>
 and your online repository is called <code class="docutils literal notranslate"><span class="pre">myonlinebook</span></code>, the command would be:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r mylocalbook/* myonlinebook/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r mylocalbook/_build/html/* myonlinebook/
 </pre></div>
 </div>
 <p>This will copy over the local book files into the online book folder.</p>
@@ -253,6 +219,36 @@ git push
 <p>That’s it!</p>
 <p>Now that your repository is created and you have your book content pushed to it,
 it’s time to publish your book online. The next sections cover how to do this.</p>
+</div>
+<div class="section" id="host-with-github-pages">
+<h2>Host with <code class="docutils literal notranslate"><span class="pre">github-pages</span></code><a class="headerlink" href="#host-with-github-pages" title="Permalink to this headline">¶</a></h2>
+<p>Since your content is already on GitHub, you can easily host it as a <code class="docutils literal notranslate"><span class="pre">github-pages</span></code>
+website. This is a service where GitHub hosts your static files as if they were
+a standalone website.</p>
+<p>The easiest way to use GitHub-pages with your built HTML is to use the <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>
+tool. It is a lightweight Python package that makes it easier to push HTML content
+to a GitHub repository.</p>
+<p>Follow these steps to use it:</p>
+<ol>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+</pre></div>
+</div>
+</li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> and point it to your HTML files, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">mylocalbook</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>This will cause <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> to push <em>all</em> of the contents of the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder
+to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch of your current repository, and push the contents to GitHub.
+By default, this generally means your site should now be viewable online.</p>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that you included the <code class="docutils literal notranslate"><span class="pre">-n</span></code> - this tells GitHub <em>not</em> to build your book with
+Jekyll, which we don’t want because our HTML is already built!</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -263,7 +259,7 @@ it’s time to publish your book online. The next sections cover how to do this.
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="03_build.html" title="previous page">Build HTML for each page of your book</a>
+    <a class='left-prev' id="prev-link" href="03_build.html" title="previous page">Build HTML for your book</a>
     <a class='right-next' id="next-link" href="publish/book-html.html" title="next page">Build the book’s site HTML locally</a>
 
               </div>

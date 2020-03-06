@@ -25,8 +25,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Anatomy of a Jupyter Book" href="01-5_tour.html" />
-    <link rel="prev" title="Books with Jupyter" href="../intro.html" />
+    <link rel="next" title="Anatomy of a Jupyter Book" href="02_create.html" />
+    <link rel="prev" title="Books with Jupyter 2.0" href="../intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -57,15 +57,15 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="../features/features.html">Features</a>
-    </li>
-    
-    <li class="nav-item ">
-        <a class="nav-link" href="../advanced/advanced.html">Advanced topics and guides</a>
+        <a class="nav-link" href="../features/index.html">Features</a>
     </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="../test_pages/test.html">Test pages</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../old_docs/index.html">Old documentation pages</a>
     </li>
     
     
@@ -96,19 +96,13 @@
         
           
               <li class="">
-                  <a href="01-5_tour.html">Anatomy of a Jupyter Book</a>
+                  <a href="02_create.html">Anatomy of a Jupyter Book</a>
               </li>
           
         
           
               <li class="">
-                  <a href="02_create.html">Create your Jupyter Book template</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="03_build.html">Build HTML for each page of your book</a>
+                  <a href="03_build.html">Build HTML for your book</a>
               </li>
           
         
@@ -169,39 +163,38 @@
                 
   <div class="section" id="the-jupyter-book-guide">
 <h1>The Jupyter Book Guide<a class="headerlink" href="#the-jupyter-book-guide" title="Permalink to this headline">¶</a></h1>
-<p>This is a guide for creating your own book using
-Jupyter Notebooks and Jekyll. Book content is written in markdown and
-Jupyter Notebooks, and <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> converts these into
-a book fit for hosting on the web.</p>
+<p>This is a guide for creating your own book using Jupyter Book.
+Book content is written in markdown and Jupyter Notebooks, and
+<code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> converts these into a book fit for hosting on the web or a
+publishable PDF.</p>
 <div class="section" id="install-the-command-line-interface">
 <h2>Install the command-line interface<a class="headerlink" href="#install-the-command-line-interface" title="Permalink to this headline">¶</a></h2>
 <p>First off, make sure you have the CLI installed so that you can work with Jupyter Book.
-The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
+The Jupyter-Book CLI allows you to build and control your
 Jupyter Book. You can install it via pip with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter-book
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/ExecutableBookProject/cli.git@master
 </pre></div>
 </div>
 </div>
 <div class="section" id="the-book-building-process">
 <h2>The book building process<a class="headerlink" href="#the-book-building-process" title="Permalink to this headline">¶</a></h2>
-<p>Building a Jupyter Book broadly consists of three steps:</p>
+<p>Building a Jupyter Book broadly consists of two steps:</p>
 <ol class="simple">
-<li><p><strong>Create your book template</strong>. Jupyter Book expects a particular
-collection of files and folders that work with the Static Site Generator
-Jekyll. The <a class="reference internal" href="01-5_tour.html"><span class="doc">anatomy of a Jupyter Book</span></a> section covers the
-general structure of Jupyter Books, and the <a class="reference internal" href="02_create.html"><span class="doc">create your book template</span></a>
-guide shows how to create your own book structure.</p></li>
-<li><p><strong>Convert each page of your book into HTML</strong>. We first create each page of
-your book into HTML. This converts your <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>, <code class="docutils literal notranslate"><span class="pre">.md</span></code>, etc files into HTML
-that can be understood by a website. It also uses your book’s metadata to insert
-tags and other layout elements into each page’s HTML. See the <a class="reference internal" href="03_build.html"><span class="doc">building each page's HTML</span></a>
-section for more information.</p></li>
-<li><p><strong>Build your book’s HTML from these pages</strong>. Once we have HTML for each page, we
-can stitch them together for a book. At the end of this step, you should have
-standalone HTML that can be hosted online. See the <a class="reference internal" href="publish/book-html.html"><span class="doc">build your book's html</span></a>
-section for more information.</p></li>
+<li><p><strong>Put your book content in a folder</strong>. Jupyter Book needs the following
+pieces in order to build your book:</p>
+<ul class="simple">
+<li><p>Your content files (the pages of your book) in either markdown or Jupyter
+Notebooks.</p></li>
+<li><p>A Table of Contents <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file (<code class="docutils literal notranslate"><span class="pre">_config.yaml</span></code>) that defines
+the structure of your book.</p></li>
+<li><p>(optional) A configuration file (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>) to control the behavior
+of Jupyter Book.</p></li>
+</ul>
+</li>
+<li><p><strong>Build your book</strong>. Using Jupyter Book’s command-line interface you can
+convert your pages into either an HTML or a PDF book.</p></li>
 <li><p><strong>Host your book’s HTML online</strong>. Once your book’s HTML is built, you can host
-it online as a public website. This guide <a class="reference internal" href="04_publish.html"><span class="doc">covers a few ways to do this</span></a>.</p></li>
+it online as a public website. See <a class="reference internal" href="04_publish.html"><span class="doc">Publishing your book online</span></a> for more information.</p></li>
 </ol>
 <p>To begin, check out the next section. You can follow this guide linearly, or use it as
 a reference later on.</p>
@@ -215,8 +208,8 @@ a reference later on.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Books with Jupyter</a>
-    <a class='right-next' id="next-link" href="01-5_tour.html" title="next page">Anatomy of a Jupyter Book</a>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Books with Jupyter 2.0</a>
+    <a class='right-next' id="next-link" href="02_create.html" title="next page">Anatomy of a Jupyter Book</a>
 
               </div>
               
