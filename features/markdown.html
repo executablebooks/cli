@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>MyST Markdown &#8212; Jupyter Book  documentation</title>
+    <title>Markdown &#8212; Jupyter Book  documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="MyST Markdown" href="myst.html" />
     <link rel="prev" title="Features" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,7 +103,13 @@
         
           
               <li class="active">
-                  <a href="">MyST Markdown</a>
+                  <a href="">Markdown</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="myst.html">MyST Markdown</a>
               </li>
           
         
@@ -151,28 +157,6 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#roles-and-directives" class="nav-link">Roles and Directives</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#using-a-directive" class="nav-link">Using a directive</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#using-a-role" class="nav-link">Using a role</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#an-example-adding-a-citation" class="nav-link">An example: adding a citation</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mathematics" class="nav-link">Mathematics</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
             <a href="#embedding-media" class="nav-link">Embedding media</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
@@ -187,7 +171,21 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#mathematics" class="nav-link">Mathematics</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#block-level-math" class="nav-link">Block-level math</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#downloading-and-printing-pages" class="nav-link">Downloading and Printing pages</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#writing-markdown-with-more-features" class="nav-link">Writing markdown with more features</a>
         </li>
     
     </ul>
@@ -198,131 +196,17 @@
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
               <div>
                 
-  <div class="section" id="myst-markdown">
-<h1>MyST Markdown<a class="headerlink" href="#myst-markdown" title="Permalink to this headline">¶</a></h1>
-<p>Jupyter Book uses a special flavor of markdown called <strong>MyST (or
-Markedly Structured Text)</strong>. It was designed to make it easier to create
-publishable computational documents in Markdown. It is a superset of
-<a class="reference external" href="https://commonmark.org/">CommonMark markdown</a> and draws heavy inspiration
-from the fantastic <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown language from RStudio</a>.</p>
-<p>You can write MyST markdown in either markdown files, or in Jupyter Notebooks.
-Jupyter Book will know how to parse both of them.</p>
-<p>This page contains a few pieces of information about MyST markdown and how it
-relates to Jupyter Book. You can
-find much more information about this flavor of markdown at
-<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">The Myst Parser documentation</a>.</p>
-<div class="section" id="roles-and-directives">
-<h2>Roles and Directives<a class="headerlink" href="#roles-and-directives" title="Permalink to this headline">¶</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like <em>functions</em>, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of
-<strong>MyST Markdown</strong>.</p>
-<div class="section" id="using-a-directive">
-<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
-<p>At its simplest, you can insert a directive into your book’s content like so:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
-My directive content
-```
-</pre></div>
-</div>
-<p>This will only work if a directive with name <code class="docutils literal notranslate"><span class="pre">mydirectivename</span></code> already exists
-(which it doesn’t). There are many pre-defined directives associated with
-Jupyter Book. For example, to insert a note box into your content, you can
-use the following directive:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
-Here is a note
-```
-</pre></div>
-</div>
-<p>This results in:</p>
-<div class="alert alert-info">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>In your built book.</p>
-<p>For more information on writing directives, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
-</div>
-<div class="section" id="using-a-role">
-<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
-<p>Roles are very similar to directives, but they are less-complex and written
-entirely on one line. You can insert a role into your book’s content with
-this pattern:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some content {rolename}`and here is my role&#39;s content!`
-</pre></div>
-</div>
-<p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
-the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
-refer directly to another page by its relative path. For example, the
-role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`../intro`</span></code> will result in: <a class="reference internal" href="../intro.html"><span class="doc">Books with Jupyter 2.0</span></a>.</p>
-<p>For more information on writing roles, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
-</div>
-<div class="section" id="an-example-adding-a-citation">
-<h3>An example: adding a citation<a class="headerlink" href="#an-example-adding-a-citation" title="Permalink to this headline">¶</a></h3>
-<p>A common use of both roles and directives is to add citations to your book.
-You can cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file that is in your
-book’s folder. For example, let’s say you have a file called
-<code class="docutils literal notranslate"><span class="pre">references.bib</span></code> with the following entry:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@InProceedings</span><span class="p">{</span> <span class="n">project_jupyter</span><span class="o">-</span><span class="n">proc</span><span class="o">-</span><span class="n">scipy</span><span class="o">-</span><span class="mi">2018</span><span class="p">,</span>
-  <span class="n">author</span>    <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">roject</span> <span class="p">{</span><span class="n">J</span><span class="p">}</span><span class="n">upyter</span> <span class="ow">and</span> <span class="p">{</span><span class="n">M</span><span class="p">}</span><span class="n">atthias</span> <span class="p">{</span><span class="n">B</span><span class="p">}</span><span class="n">ussonnier</span> <span class="ow">and</span> <span class="p">{</span><span class="n">J</span><span class="p">}</span><span class="n">essica</span> <span class="p">{</span><span class="n">F</span><span class="p">}</span><span class="n">orde</span> <span class="ow">and</span> <span class="p">{</span><span class="n">J</span><span class="p">}</span><span class="n">eremy</span> <span class="p">{</span><span class="n">F</span><span class="p">}</span><span class="n">reeman</span> <span class="ow">and</span> <span class="p">{</span><span class="n">B</span><span class="p">}</span><span class="n">rian</span> <span class="p">{</span><span class="n">G</span><span class="p">}</span><span class="n">ranger</span> <span class="ow">and</span> <span class="p">{</span><span class="n">T</span><span class="p">}</span><span class="n">im</span> <span class="p">{</span><span class="n">H</span><span class="p">}</span><span class="n">ead</span> <span class="ow">and</span> <span class="p">{</span><span class="n">C</span><span class="p">}</span><span class="n">hris</span> <span class="p">{</span><span class="n">H</span><span class="p">}</span><span class="n">oldgraf</span> <span class="ow">and</span> <span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="n">yle</span> <span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="n">elley</span> <span class="ow">and</span> <span class="p">{</span><span class="n">G</span><span class="p">}</span><span class="n">ladys</span> <span class="p">{</span><span class="n">N</span><span class="p">}</span><span class="n">alvarte</span> <span class="ow">and</span> <span class="p">{</span><span class="n">A</span><span class="p">}</span><span class="n">ndrew</span> <span class="p">{</span><span class="n">O</span><span class="p">}</span><span class="n">sheroff</span> <span class="ow">and</span> <span class="p">{</span><span class="n">M</span><span class="p">}</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">acer</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Y</span><span class="p">}</span><span class="n">uvi</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">anda</span> <span class="ow">and</span> <span class="p">{</span><span class="n">F</span><span class="p">}</span><span class="n">ernando</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">erez</span> <span class="ow">and</span> <span class="p">{</span><span class="n">B</span><span class="p">}</span><span class="n">enjamin</span> <span class="p">{</span><span class="n">R</span><span class="p">}</span><span class="n">agan</span><span class="o">-</span><span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="n">elley</span> <span class="ow">and</span> <span class="p">{</span><span class="n">C</span><span class="p">}</span><span class="n">arol</span> <span class="p">{</span><span class="n">W</span><span class="p">}</span><span class="n">illing</span> <span class="p">},</span>
-  <span class="n">title</span>     <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="n">B</span><span class="p">}</span><span class="n">inder</span> <span class="mf">2.0</span> <span class="o">-</span> <span class="p">{</span><span class="n">R</span><span class="p">}</span><span class="n">eproducible</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">sharable</span> <span class="n">environments</span> <span class="k">for</span> <span class="n">science</span> <span class="n">at</span> <span class="n">scale</span> <span class="p">},</span>
-  <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">roceedings</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">17</span><span class="n">th</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">ython</span> <span class="ow">in</span> <span class="p">{</span><span class="n">S</span><span class="p">}</span><span class="n">cience</span> <span class="p">{</span><span class="n">C</span><span class="p">}</span><span class="n">onference</span> <span class="p">},</span>
-  <span class="n">pages</span>     <span class="o">=</span> <span class="p">{</span> <span class="mi">113</span> <span class="o">-</span> <span class="mi">120</span> <span class="p">},</span>
-  <span class="n">year</span>      <span class="o">=</span> <span class="p">{</span> <span class="mi">2018</span> <span class="p">},</span>
-  <span class="n">editor</span>    <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="n">F</span><span class="p">}</span><span class="n">atih</span> <span class="p">{</span><span class="n">A</span><span class="p">}</span><span class="n">kici</span> <span class="ow">and</span> <span class="p">{</span><span class="n">D</span><span class="p">}</span><span class="n">avid</span> <span class="p">{</span><span class="n">L</span><span class="p">}</span><span class="n">ippa</span> <span class="ow">and</span> <span class="p">{</span><span class="n">D</span><span class="p">}</span><span class="n">illon</span> <span class="p">{</span><span class="n">N</span><span class="p">}</span><span class="n">iederhut</span> <span class="ow">and</span> <span class="p">{</span><span class="n">M</span><span class="p">}</span> <span class="p">{</span><span class="n">P</span><span class="p">}</span><span class="n">acer</span> <span class="p">},</span>
-  <span class="n">doi</span>       <span class="o">=</span> <span class="p">{</span> <span class="mf">10.25080</span><span class="o">/</span><span class="n">Majora</span><span class="o">-</span><span class="mi">4</span><span class="n">af1f417</span><span class="o">-</span><span class="mi">011</span> <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>You can add a citation in-line in your markdown with the <strong>{cite}</strong> role.
-The following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`project_jupyter-proc-scipy-2018`</span></code> will render like
-this: <a class="bibtex reference internal" href="#project-jupyter-proc-scipy-2018" id="id1">[ProjectJupyterMatthiasBussonnierJessicaForde+18]</a>.</p>
-<p>Once you’ve added citations to your page, you can add a bibliography by
-calling the <strong>bibliography directive</strong>. To do so, use this syntax:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography} references.bib
-```
-</pre></div>
-</div>
-<p>And in your built book, it will look like this:</p>
-<p id="bibtex-bibliography-features/markdown-0"><dl class="citation">
-<dt class="bibtex label" id="project-jupyter-proc-scipy-2018"><span class="brackets"><a class="fn-backref" href="#id1">ProjectJupyterMatthiasBussonnierJessicaForde+18</a></span></dt>
-<dd><p>Project Jupyter, Matthias Bussonnier, Jessica Forde, Jeremy Freeman, Brian Granger, Tim Head, Chris Holdgraf, Kyle Kelley, Gladys Nalvarte, Andrew Osheroff, M Pacer, Yuvi Panda, Fernando Perez, Benjamin Ragan-Kelley, and Carol Willing. Binder 2.0 - Reproducible, interactive, sharable environments for science at scale. In Fatih Akici, David Lippa, Dillon Niederhut, and M Pacer, editors, <em>Proceedings of the 17th Python in Science Conference</em>, 113 – 120. 2018. <a class="reference external" href="https://doi.org/10.25080/Majora-4af1f417-011">doi:10.25080/Majora-4af1f417-011</a>.</p>
-</dd>
-</dl>
-</p>
-<p>For more information about adding citations, see <a class="reference internal" href="citations.html"><span class="doc">Including citations in your book</span></a>. For more
-information about the MyST markdown language, see
-<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">The MyST Parser documentation</a>.</p>
-</div>
-</div>
-<div class="section" id="mathematics">
-<h2>Mathematics<a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
-<p>Jupyter Book uses the excellent <a class="reference external" href="http://docs.mathjax.org/en/latest/">MathJax</a> library,
-along with the default Jupyter Notebook configuration, for rendering mathematics from
-latex-style syntax. For example, here’s a mathematical expression rendered with MathJax:</p>
-<p>\begin{align*}
-P(A_1 \cup A_2 \cup A_3) ~ = ~ P(B \cup A_3) &amp;= ~ P(B) + P(A_3) - P(BA_3) \<br />
-&amp;= ~ P(A_1) + P(A_2) - P(A_1A_2) + P(A_3) - P(A_1A_3 \cup A_2A_3)\<br />
-&amp;= ~ \sum_{i=1}^3 P(A_i) - \mathop{\sum \sum}_{1 \le i &lt; j \le 3} P(A_iA_j) + P(A_1A_2A_3)
-\end{align*}</p>
-<p>And here is the code that was used to generate it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
-\begin{align*}
-P(A_1 \cup A_2 \cup A_3) ~ = ~ P(B \cup A_3) &amp;= ~ P(B) + P(A_3) - P(BA_3) \\
-&amp;= ~ P(A_1) + P(A_2) - P(A_1A_2) + P(A_3) - P(A_1A_3 \cup A_2A_3)\\
-&amp;= ~ \sum_{i=1}^3 P(A_i) - \mathop{\sum \sum}_{1 \le i &lt; j \le 3} P(A_iA_j) + P(A_1A_2A_3)
-\end{align*}
-```
-</pre></div>
-</div>
-<p>For more information about math with Jupyter Book, see <a class="reference internal" href="math.html"><span class="doc">Typesetting Math in your book</span></a>.</p>
-</div>
+  <div class="section" id="markdown">
+<h1>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book supports a common flavor of markdown called
+<a class="reference external" href="https://commonmark.org/">CommonMark Markdown</a>. This is the flavor of markdown
+that Jupyter (and many other online platforms) use. It has many elements
+for standard text processing, though it lacks a lot of features used for
+publishing and documentation. If you need these extra features in Jupyter
+Book, see <a class="reference internal" href="myst.html"><span class="doc">MyST Markdown</span></a>.</p>
+<p>You can write markdown in either markdown files, or in Jupyter Notebooks.
+Jupyter Book will know how to parse both of them. This page describes some
+basic features of CommonMark markdown, and how they fit in to Jupyter Book.</p>
 <div class="section" id="embedding-media">
 <h2>Embedding media<a class="headerlink" href="#embedding-media" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="adding-images">
@@ -332,12 +216,58 @@ relative paths, then they will continue to work when the markdown files are copi
 so long as they point to a file that’s inside of the repository.</p>
 <p>Here’s an image relative to the book content root</p>
 <p><img alt="" src="../_images/C-3PO_droid.png" /></p>
+<p>It was generated with this code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![](../images/C-3PO_droid.png)
+</pre></div>
+</div>
 </div>
 <div class="section" id="adding-movies">
 <h3>Adding movies<a class="headerlink" href="#adding-movies" title="Permalink to this headline">¶</a></h3>
 <p>You can even embed references to movies on the web! For example, here’s a little gif for you!</p>
 <p><img alt="" src="https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif" /></p>
 <p>This will be included in your book when it is built.</p>
+</div>
+</div>
+<div class="section" id="mathematics">
+<h2>Mathematics<a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter Book uses the excellent <a class="reference external" href="http://docs.mathjax.org/en/latest/">MathJax</a> library,
+along with the default Jupyter Notebook configuration, for rendering mathematics from
+latex-style syntax.</p>
+<p>For example, here’s a mathematical expression rendered with MathJax:</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split}
+P(A_1 \cup A_2 \cup A_3) ~ = ~ P(B \cup A_3) &amp;= ~ P(B) + P(A_3) - P(BA_3) \\
+&amp;= ~ P(A_1) + P(A_2) - P(A_1A_2) + P(A_3) - P(A_1A_3 \cup A_2A_3)\\
+&amp;= ~ \sum_{i=1}^3 P(A_i) - \mathop{\sum \sum}_{1 \le i &lt; j \le 3} P(A_iA_j) + P(A_1A_2A_3)
+\end{split}\]</div>
+</p>
+<div class="section" id="block-level-math">
+<h3>Block-level math<a class="headerlink" href="#block-level-math" title="Permalink to this headline">¶</a></h3>
+<p>You can include block-level math by wrapping your math in <code class="docutils literal notranslate"><span class="pre">$$</span></code> characters.
+For example, the following block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+wow = its^{math}
+$$
+</pre></div>
+</div>
+<p>Results in this output:</p>
+<p><div class="math notranslate nohighlight">
+\[
+wow = its^{math}
+\]</div>
+</p>
+<p>You can also include math blocks by using latex-style syntax using
+<code class="docutils literal notranslate"><span class="pre">\begin{align*}</span></code>. For example, the following block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
+<span class="n">yep</span> <span class="o">=</span> <span class="n">its_more</span><span class="o">^</span><span class="n">math</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<p>\begin{align*}
+yep = its_more^math
+\end{align*}</p>
+<p>For more information about math with Jupyter Book, see <a class="reference internal" href="math.html"><span class="doc">Typesetting Math in your book</span></a>.</p>
 </div>
 </div>
 <div class="section" id="downloading-and-printing-pages">
@@ -360,6 +290,14 @@ before converting to PDF. If you have a good idea for how to get around this, pl
 <a class="reference external" href="https://github.com/jupyter/jupyter-book/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">open an issue</a>!</p>
 </div>
 </div>
+<div class="section" id="writing-markdown-with-more-features">
+<h2>Writing markdown with more features<a class="headerlink" href="#writing-markdown-with-more-features" title="Permalink to this headline">¶</a></h2>
+<p>In addition to CommonMark markdown, Jupyter Book also supports a more
+fully-featured version of markdown called <strong>MyST Markdown</strong>. This is a slight
+addition to CommonMark that includes syntactic pieces that are useful for
+publishing computational narratives. For more information about MyST
+Markdown, see <a class="reference internal" href="myst.html"><span class="doc">MyST Markdown</span></a>.</p>
+</div>
 </div>
 
 
@@ -368,7 +306,7 @@ before converting to PDF. If you have a good idea for how to get around this, pl
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">Features</a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">Content with notebooks</a>
+    <a class='right-next' id="next-link" href="myst.html" title="next page">MyST Markdown</a>
 
               </div>
               
