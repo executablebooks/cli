@@ -49,20 +49,33 @@ def add_toctree(app, docname, source):
         )
 
     # If we have no sections, then don't worry about a toctree
-    sections = [(ii.get("file"), ii.get("name")) for ii in page.get("pages", [])]
+    sections = []
+    for ipage in page.get("pages", []):
+        if "divider" in ipage:
+            sections.append(("divider", None))
+        elif "header" in ipage:
+            sections.append(("header", ipage["header"]))
+        else:
+            sections.append((ipage.get("file"), ipage.get("name")))
     if len(sections) == 0:
         return
 
+    # Update the sections in-place with proper toctree values
     for ii, (path_sec, name) in enumerate(sections):
-        # Update path so it is relative to the root of the parent
-        path_parent_folder = Path(page["file"]).parent
-        path_sec = os.path.relpath(path_sec, path_parent_folder)
+        if path_sec == "divider":
+            sections[ii] = "++ divider"
+        elif path_sec == "header":
+            sections[ii] = f"++ {path_sec}: {name}"
+        else:
+            # Update path so it is relative to the root of the parent
+            path_parent_folder = Path(page["file"]).parent
+            path_sec = os.path.relpath(path_sec, path_parent_folder)
 
-        # Decide whether we'll over-ride with a name in the toctree
-        this_section = f"{path_sec}"
-        if name:
-            this_section = f"{name} <{this_section}>"
-        sections[ii] = this_section
+            # Decide whether we'll over-ride with a name in the toctree
+            this_section = f"{path_sec}"
+            if name:
+                this_section = f"{name} <{this_section}>"
+            sections[ii] = this_section
 
     # Parse flags in the page metadata
     options = []
@@ -87,6 +100,7 @@ def add_toctree(app, docname, source):
 
     # Create the markdown directive for our toctree
     toctree = toctree_text.format(options=options, sections="\n".join(sections))
+
     if suff == ".md":
         source[0] += toctree + "\n"
     elif suff == ".ipynb":

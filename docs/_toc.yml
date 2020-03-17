@@ -7,6 +7,9 @@
   - file: guide/05_faq
   - file: guide/06_advanced
 
+- divider:
+- header: My header
+
 - file: features/index
   pages:
     - file: features/markdown
