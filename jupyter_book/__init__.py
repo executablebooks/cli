@@ -10,7 +10,7 @@ __version__ = "0.0.1dev0"
 # We connect this function to the step after the builder is initialized
 def setup(app):
     app.connect("config-inited", update_indexname)
-    app.connect("source-read", add_toctree)
+    app.connect("doctree-read", add_toctree)
 
     app.add_config_value("globaltoc_path", "toc.yml", "env")
 

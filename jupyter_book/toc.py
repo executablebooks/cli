@@ -3,6 +3,9 @@ import os
 import yaml
 from textwrap import dedent
 from pathlib import Path
+from sphinx import addnodes
+from sphinx.util import docname_join
+from docutils import nodes
 
 from .utils import _filename_to_title, SUPPORTED_FILE_SUFFIXES
 
@@ -33,14 +36,14 @@ def find_name(pages, name):
                 return page
 
 
-def add_toctree(app, docname, source):
+def add_toctree(app, doctree):
     # If no globaltoc is given, we'll skip this part
     if not app.config["globaltoc_path"]:
         return
 
     # First check whether this page has any descendants
     # If so, then we'll manually add them as a toctree object
-    path = app.env.doc2path(docname, base=None)
+    path = app.env.doc2path(app.env.docname, base=None)
     toc = app.config["globaltoc"]
     page = find_name(toc, _no_suffix(path))
 
@@ -51,56 +54,50 @@ def add_toctree(app, docname, source):
         )
 
     # If we have no sections, then don't worry about a toctree
-    sections = [(ii.get("file"), ii.get("name")) for ii in page.get("pages", [])]
+    sections = [(ii.get("title"), ii.get("file")) for ii in page.get("pages", [])]
     if len(sections) == 0:
         return
 
-    for ii, (path_sec, name) in enumerate(sections):
+    for ii, (title, path_sec) in enumerate(sections):
         # Update path so it is relative to the root of the parent
         path_parent_folder = Path(page["file"]).parent
         path_sec = os.path.relpath(path_sec, path_parent_folder)
+        sections[ii] = (title, path_sec)
 
-        # Decide whether we'll over-ride with a name in the toctree
-        this_section = f"{path_sec}"
-        if name:
-            this_section = f"{name} <{this_section}>"
-        sections[ii] = this_section
+    # Now build a toctree node (what the TocTree directive does basically)
+    # Mimic https://github.com/sphinx-doc/sphinx/blob/0ae1bf6f037010b5599d12196b155bbf2cece9ba/sphinx/directives/other.py#L43
+    subnode = addnodes.toctree()
+    subnode["parent"] = app.env.docname
 
-    # Parse flags in the page metadata
-    options = []
-    if page.get("numbered"):
-        options.append("numbered")
-    options = "\n".join([f":{ii}:" for ii in options])
+    # (title, ref) pairs, where ref may be a document, or an external link,
+    # and title may be None if the document's title is to be used
+    # NOTE: most of these we won't use, the ones we use are at the bottom
+    subnode["includefiles"] = []
+    subnode["maxdepth"] = -1
+    subnode["caption"] = False
+    subnode["glob"] = False
+    subnode["hidden"] = True
+    subnode["includehidden"] = False
+    subnode["titlesonly"] = False
+    subnode["rawentries"] = ""
 
-    # Figure out what kind of text defines a toctree directive for this file
-    # currently, assumed to be markdown
-    suff = Path(path).suffix
-    toctree_text = dedent(
-        """
-    ```{{toctree}}
-    :hidden:
-    :titlesonly:
-    {options}
+    subnode["entries"] = []
+    subnode["numbered"] = "numbered" in page
 
-    {sections}
-    ```
-    """
-    )
+    wrappernode = nodes.compound(classes=["toctree-wrapper"])
+    wrappernode.append(subnode)
 
-    # Create the markdown directive for our toctree
-    toctree = toctree_text.format(options=options, sections="\n".join(sections))
-    if suff == ".md":
-        source[0] += toctree + "\n"
-    elif suff == ".ipynb":
-        # Lazy import nbformat because we only need it if we have an ipynb file
-        import nbformat as nbf
+    # Now parse the content and add the entries to subnode
+    # reg = path, title = title
+    for (title, path) in sections:
+        # absolutize filenames
+        path = docname_join(app.env.docname, path)
+        subnode["entries"].append((title, path))
+        subnode["includefiles"].append(path)
 
-        ntbk = nbf.reads(source[0], nbf.NO_CONVERT)
-        md = nbf.v4.new_markdown_cell(toctree)
-        ntbk.cells.append(md)
-        source[0] = nbf.writes(ntbk)
-    else:
-        raise ValueError("Only markdown and ipynb files are supported.")
+    # Now add the subnode to the last section of the toctree
+    doc_sections = list(doctree.traverse(nodes.section))
+    doc_sections[-1].append(wrappernode)
 
 
 def update_indexname(app, config):

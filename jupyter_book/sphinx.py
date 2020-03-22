@@ -93,7 +93,7 @@ def build_sphinx(
 
     # Doctrees directory
     if not doctreedir:
-        doctreedir = op.join(outputdir, ".doctrees")
+        doctreedir = str(Path(outputdir).parent.joinpath(".doctrees"))
 
     if jobs is None:
         jobs = 1
