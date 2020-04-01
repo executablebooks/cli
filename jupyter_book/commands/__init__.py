@@ -5,6 +5,7 @@ from pathlib import Path
 import click
 from glob import glob
 import shutil as sh
+from subprocess import run, PIPE
 import asyncio
 
 from ..sphinx import build_sphinx
@@ -35,7 +36,12 @@ def build(path_book, path_output, config, toc, build):
     PATH_BOOK = Path(path_book).absolute()
 
     book_config = {}
-    build_dict = {"html": "html", "pdf_html": "singlehtml"}
+    build_dict = {
+        "html": "html",
+        "pdf_html": "singlehtml",
+        "pdf_latex": "latex",
+        "latex": "latex",
+    }
     if build not in build_dict.keys():
         raise ValueError(
             f"Value for --build must be one of {tuple(build_dict.keys())}. Got '{build}'"
@@ -64,8 +70,12 @@ def build(path_book, path_output, config, toc, build):
     if build == "pdf_html":
         book_config["html_theme_options"] = {"single_page": True}
 
-    OUTPUT_PATH = path_output if path_output is not None else PATH_BOOK
-    OUTPUT_PATH = Path(OUTPUT_PATH).joinpath("_build/html")
+    BUILD_PATH = path_output if path_output is not None else PATH_BOOK
+    BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
+    if build in ["html", "pdf_html"]:
+        OUTPUT_PATH = BUILD_PATH.joinpath("html")
+    elif build in ["latex", "pdf_latex"]:
+        OUTPUT_PATH = BUILD_PATH.joinpath("latex")
 
     # Now call the Sphinx commands to build
     build_sphinx(
@@ -80,10 +90,28 @@ def build(path_book, path_output, config, toc, build):
     if build == "pdf_html":
         print("Finished generating HTML for book...")
         print("Converting book HTML into PDF...")
-        path_pdf_output = OUTPUT_PATH.parent.joinpath("pdf")
+        path_pdf_output = BUILD_PATH.joinpath("pdf")
         path_pdf_output.mkdir(exist_ok=True)
         path_pdf_output = path_pdf_output.joinpath("book.pdf")
         html_to_pdf(OUTPUT_PATH.joinpath("index.html"), path_pdf_output)
+        path_pdf_output_rel = path_pdf_output.relative_to(Path(".").resolve())
+        print(f"A PDF of your book can be found at: {path_pdf_output_rel}")
+    elif build == "pdf_latex":
+        print("Finished generating latex for book...")
+        print("Converting book latex into PDF...")
+        # Convert to PDF via tex
+        path_tex_file = list(OUTPUT_PATH.glob("*.tex"))
+        if not path_tex_file:
+            raise ValueError("Could not find a path to a generated latex file...")
+        path_tex_file = path_tex_file[0]
+        CMD = f"latexmk -pdf -dvi- -ps- '{path_tex_file.name}'"
+        print(CMD)
+        out = run(CMD.split(), stdout=PIPE, cwd=str(path_tex_file.parent))
+
+        # Collect the path of the generated output
+        path_pdf_output = BUILD_PATH.joinpath("pdf")
+        path_pdf_output.mkdir(exist_ok=True)
+        path_pdf_output = path_pdf_output.joinpath("book.pdf")
         path_pdf_output_rel = path_pdf_output.relative_to(Path(".").resolve())
         print(f"A PDF of your book can be found at: {path_pdf_output_rel}")
 

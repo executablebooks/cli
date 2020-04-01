@@ -41,6 +41,9 @@ def add_toctree(app, docname, source):
     if not app.config["globaltoc_path"]:
         return
 
+    # Some behavior we only trigger with an HTML build
+    is_html = "latex" not in app.builder.name
+
     # First check whether this page has any descendants
     # If so, then we'll manually add them as a toctree object
     path_parent = app.env.doc2path(docname, base=None)
@@ -95,6 +98,8 @@ def add_toctree(app, docname, source):
     toctrees = []
     toc_sections = []
     toc_options = []
+
+
     for ipage in subsections:
         # First handle special case of chapters
         if "header" in ipage:
@@ -121,10 +126,11 @@ def add_toctree(app, docname, source):
             this_section = f"{title} <{this_section}>"
         toc_sections.append(this_section)
 
-        option_flags = ["numbered", "expand_sections"]
-        for option in option_flags:
-            if parent_page.get(option):
-                toc_options.append(f":{option}:")
+        if is_html:
+            option_flags = ["numbered", "expand_sections"]
+            for option in option_flags:
+                if parent_page.get(option):
+                    toc_options.append(f":{option}:")
 
     # Now create the final toctree for this page and prep them to insert into the page
     if toc_sections:
