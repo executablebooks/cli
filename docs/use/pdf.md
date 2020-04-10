@@ -13,11 +13,8 @@ It is also possible to build a single PDF from your book's HTML. This first
 converts all of your book's content into a single HTML file, and then renders
 it as a PDF by emulating a browser from the command-line.
 
-```{warning}
-This is an experimental feature, and may change in the future.
-```
+### Installation
 
-````{sidebar} **Note**
 If you wish to build a PDF from your book's HTML, you will need the `pyppeteer` package.
 You can install it like so:
 
@@ -25,10 +22,11 @@ You can install it like so:
 pip install pyppeteer
 ```
 
+```{sidebar}
 In addition, if you get errors about libraries that don't exist, check out
 [these install commands](https://circleci.com/orbs/registry/orb/threetreeslight/puppeteer)
 to see if that fixes it. We warned you it was an experimental feature :-)
-````
+```
 
 To build a single PDF from your book's HTML, use the following command:
 
@@ -38,6 +36,11 @@ jupyter-book build mybookname/ --build pdf_html
 
 ## Build a PDF using Latex
 
-```{warning}
-Not yet implemented, but coming soon...
+You can also use Latex to build a PDF of your book. This can behave differently depending on your
+operating system and setup. This section tries to recommend a few best-practices.
+
+### Installation
+
+```bash
+sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
 ```
