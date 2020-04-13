@@ -40,7 +40,7 @@ def build(path_book, path_output, config, toc, build):
         "html": "html",
         "pdf_html": "singlehtml",
         "latex": "latex",
-        "latexpdf": "latexpdf",
+        "latexpdf": "latex",
     }
     if build not in build_dict.keys():
         raise ValueError(
@@ -69,6 +69,8 @@ def build(path_book, path_output, config, toc, build):
     # Builder-specific overrides
     if build == "pdf_html":
         book_config["html_theme_options"] = {"single_page": True}
+    if build == "latexpdf":
+        book_config["latex_engine"] = "xelatex"
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
@@ -96,6 +98,13 @@ def build(path_book, path_output, config, toc, build):
         html_to_pdf(OUTPUT_PATH.joinpath("index.html"), path_pdf_output)
         path_pdf_output_rel = path_pdf_output.relative_to(Path(".").resolve())
         print(f"A PDF of your book can be found at: {path_pdf_output_rel}")
+    elif build == "latexpdf":
+        print("Finished generating latex for book...")
+        print("Converting book latex into PDF...")
+        # Convert to PDF via tex
+        CMD = "make all"
+        out = run(CMD.split(), stdout=PIPE, cwd=str(OUTPUT_PATH))
+        print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
 
 
 @main.command()
