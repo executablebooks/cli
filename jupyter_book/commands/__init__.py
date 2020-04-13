@@ -1,12 +1,15 @@
 """Defines the commands that the CLI will use."""
 import sys
+import os
 import os.path as op
 from pathlib import Path
 import click
 from glob import glob
 import shutil as sh
+import subprocess
 from subprocess import run, PIPE
 import asyncio
+from sphinx.util.osutil import cd
 
 from ..sphinx import build_sphinx
 from ..toc import build_toc
@@ -101,10 +104,18 @@ def build(path_book, path_output, config, toc, build):
     elif build == "latexpdf":
         print("Finished generating latex for book...")
         print("Converting book latex into PDF...")
-        # Convert to PDF via tex
-        CMD = "make all"
-        out = run(CMD.split(), stdout=PIPE, cwd=str(OUTPUT_PATH))
-        print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
+        # Convert to PDF via tex and template built Makefile and make.bat
+        if sys.platform == 'win32':
+            makecmd = os.environ.get('MAKE', 'make.bat')
+        else:
+            makecmd = os.environ.get('MAKE', 'make')
+        try:
+            with cd(OUTPUT_PATH):
+                out = subprocess.call([makecmd, 'all-pdf'])
+            print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
+        except OSError:
+            print('Error: Failed to run: %s' % makecmd)
+            return 1
 
 
 @main.command()
