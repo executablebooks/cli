@@ -72,8 +72,6 @@ def build(path_book, path_output, config, toc, build):
     # Builder-specific overrides
     if build == "pdf_html":
         book_config["html_theme_options"] = {"single_page": True}
-    if build == "latexpdf":
-        book_config["latex_engine"] = "xelatex"
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")

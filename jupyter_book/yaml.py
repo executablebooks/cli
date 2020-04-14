@@ -69,6 +69,9 @@ def yaml_to_sphinx(yaml):
             "sidebar_footer_text"
         )
         out["google_analytics_id"] = html.get("google_analytics_id")
+    latex = yaml.get("latex")
+    if latex:
+        out["latex_engine"] = latex.get("latex_engine")
 
     # Files that we wish to skip
     out["exclude_patterns"].extend(yaml.get("exclude_patterns", []))
