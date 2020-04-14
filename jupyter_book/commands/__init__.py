@@ -41,7 +41,7 @@ def build(path_book, path_output, config, toc, build):
     book_config = {}
     build_dict = {
         "html": "html",
-        "pdf_html": "singlehtml",
+        "pdfhtml": "singlehtml",
         "latex": "latex",
         "pdflatex": "latex",
     }
@@ -70,12 +70,12 @@ def build(path_book, path_output, config, toc, build):
         book_config["yaml_config_path"] = str(config)
 
     # Builder-specific overrides
-    if build == "pdf_html":
+    if build == "pdfhtml":
         book_config["html_theme_options"] = {"single_page": True}
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
-    if build in ["html", "pdf_html"]:
+    if build in ["html", "pdfhtml"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("html")
     elif build in ["latex", "pdflatex"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("latex")
@@ -90,7 +90,7 @@ def build(path_book, path_output, config, toc, build):
     )
 
     # Builder-specific options
-    if build == "pdf_html":
+    if build == "pdfhtml":
         print("Finished generating HTML for book...")
         print("Converting book HTML into PDF...")
         path_pdf_output = BUILD_PATH.joinpath("pdf")

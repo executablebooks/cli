@@ -12,7 +12,7 @@ jobs:
           keys:
             - cache-pip
 
-      - run: pip install --user .[testing,pdf_html]
+      - run: pip install --user .[testing,pdfhtml]
       - save_cache:
           key: cache-pip
           paths:
@@ -40,7 +40,7 @@ jobs:
       # Build a PDF of the book to view as an artifact
       - run:
           name: PDF from HTML
-          command: jb build docs --build pdf_html
+          command: jb build docs --build pdfhtml
 
       - store_artifacts:
           path: docs/_build/pdf/book.pdf

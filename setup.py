@@ -65,7 +65,7 @@ setup(
             "matplotlib",
             "numpy",
         ],
-        "pdf_html": "pyppeteer",
+        "pdfhtml": "pyppeteer",
     },
     entry_points={
         "console_scripts": [
