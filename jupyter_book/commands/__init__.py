@@ -43,7 +43,7 @@ def build(path_book, path_output, config, toc, build):
         "html": "html",
         "pdf_html": "singlehtml",
         "latex": "latex",
-        "latexpdf": "latex",
+        "pdflatex": "latex",
     }
     if build not in build_dict.keys():
         raise ValueError(
@@ -77,7 +77,7 @@ def build(path_book, path_output, config, toc, build):
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
     if build in ["html", "pdf_html"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("html")
-    elif build in ["latex", "latexpdf"]:
+    elif build in ["latex", "pdflatex"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("latex")
 
     # Now call the Sphinx commands to build
@@ -99,7 +99,7 @@ def build(path_book, path_output, config, toc, build):
         html_to_pdf(OUTPUT_PATH.joinpath("index.html"), path_pdf_output)
         path_pdf_output_rel = path_pdf_output.relative_to(Path(".").resolve())
         print(f"A PDF of your book can be found at: {path_pdf_output_rel}")
-    elif build == "latexpdf":
+    elif build == "pdflatex":
         print("Finished generating latex for book...")
         print("Converting book latex into PDF...")
         # Convert to PDF via tex and template built Makefile and make.bat
