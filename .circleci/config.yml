@@ -27,6 +27,12 @@ jobs:
           name: Install chromium
           command: pyppeteer-install
 
+      - run:
+          name: Install texlive
+          command: | 
+            bash scripts/install_latex.sh
+            export PATH="/tmp/texlive/bin/x86_64-linux:$PATH"
+
       # Make sure tests build in CircleCI (so we can preview w/ SSH if we wish)
       - run:
           name: Run pytest
