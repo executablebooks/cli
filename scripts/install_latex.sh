@@ -23,3 +23,4 @@
  tlmgr update --self --all --no-auto-install
 
  echo "Finished updating TexLive"
+ 

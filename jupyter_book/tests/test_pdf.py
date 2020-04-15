@@ -16,10 +16,11 @@ def test_pdfhtml(tmpdir):
     assert path_html.joinpath("index.html").exists()
     assert path_pdf.joinpath("book.pdf").exists()
 
+
 def test_pdflatex(tmpdir):
     path_output = Path(tmpdir).absolute()
     path_template = path_tests.parent.joinpath("book_template")
     cmd = f"jb build {path_template} --path-output {path_output} --build pdflatex"
     run(cmd.split(), check=True)
     path_pdf = path_output.joinpath("_build", "latex")
-    assert path_pdf.joinpath("python.pdf").exists()    #TODO: Update name of file once configured for named latex document
+    assert path_pdf.joinpath("book.pdf").exists()
