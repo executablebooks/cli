@@ -10,19 +10,18 @@ from yaml import safe_load
 PATH_YAML_DEFAULT = Path(__file__).parent.joinpath("default_config.yml")
 
 
-def add_yaml_config(app):
-    """Load all of the key/vals in a config file into the HTML page context"""
+def add_yaml_config(app, config):
+    """Load all of the key/vals in a config file into the Sphinx config"""
     # First load the default YAML config
     yaml_config = safe_load(PATH_YAML_DEFAULT.read_text())
 
     # Update the default config with a provided one, if it exists
     path_yaml = app.config["yaml_config_path"]
-    print(path_yaml)
     if len(path_yaml) > 0:
         path_yaml = Path(path_yaml)
         if not path_yaml.exists():
             raise ValueError(
-                f"Path to a YAML configuration file was given, but not found: {path_yaml}"
+                f"Path to a _config.yml file was given, but not found: {path_yaml}"
             )
 
         # Load the YAML and update its values to translate it into Sphinx keys
@@ -30,12 +29,12 @@ def add_yaml_config(app):
         yaml_config.update(yaml_update)
 
     # Now update our Sphinx build configuration
-    config = yaml_to_sphinx(yaml_config)
-    for key, val in config.items():
-        app.config[key] = val
+    new_config = yaml_to_sphinx(yaml_config, config)
+    for key, val in new_config.items():
+        config[key] = val
 
 
-def yaml_to_sphinx(yaml):
+def yaml_to_sphinx(yaml, config):
     """Convert a Jupyter Book style config structure into a Sphinx docs structure."""
     out = {
         "html_theme_options": {},

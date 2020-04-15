@@ -13,7 +13,7 @@ REDIRECT_TEXT = """
 """
 
 ROOT = Path(__file__)
-# Some configuration values that don't make sense to be in `default_config.yml` because they are sphinx-specific
+# Some configuration values that are really sphinx-specific
 DEFAULT_CONFIG = dict(
     extensions=[
         "sphinx_togglebutton",
@@ -30,7 +30,9 @@ DEFAULT_CONFIG = dict(
     html_theme="sphinx_book_theme",
     html_theme_options={
         "single_page": False,
-        "sidebar_footer_text": "Powered by <a href='https://jupyterbook.org'>Jupyter Book</a>",
+        "sidebar_footer_text": (
+            "Powered by <a href='https://jupyterbook.org'>Jupyter Book</a>"
+        ),
     },
     html_add_permalinks="¶",
     numfig=True,
@@ -43,6 +45,7 @@ def build_sphinx(
     confdir=None,
     noconfig=False,
     confoverrides=None,
+    extra_extensions=None,
     htmloverrides=None,
     doctreedir=None,
     filenames=None,
@@ -62,6 +65,14 @@ def build_sphinx(
 
     This is a slightly modified version of
     https://github.com/sphinx-doc/sphinx/blob/3.x/sphinx/cmd/build.py#L198.
+
+    Extra parameters
+    ----------------
+
+    extra_extensions : list | None
+        A list of extra extensions to load into Sphinx. This must be done
+        before Sphinx is initialized otherwise the extensions aren't properly
+        initialized.
     """
 
     # Manual configuration overrides
@@ -69,6 +80,12 @@ def build_sphinx(
         confoverrides = {}
     config = DEFAULT_CONFIG.copy()
     config.update(confoverrides)
+
+    if extra_extensions:
+        if not isinstance(extra_extensions, list):
+            extra_extensions = [extra_extensions]
+        for ext in extra_extensions:
+            config["extensions"].append(ext)
 
     # HTML-specific configuration
     if htmloverrides is None:
@@ -119,7 +136,7 @@ def build_sphinx(
     if really_quiet:
         status = warning = None
 
-    # Error on warnings
+    # Raise more warnings
     if nitpicky:
         config["nitpicky"] = True
 
@@ -150,11 +167,15 @@ def build_sphinx(
                 path_toc = Path(config["globaltoc_path"])
                 if not path_toc.exists():
                     raise ValueError(
-                        f"You gave a Configuration file path that doesn't exist: {path_toc}"
+                        (
+                            f"You gave a Configuration file path"
+                            "that doesn't exist: {path_toc}"
+                        )
                     )
                 if path_toc.suffix not in [".yml", ".yaml"]:
                     raise ValueError(
-                        f"You gave a Configuration file path that is not a YAML file: {path_toc}"
+                        f"You gave a Configuration file path"
+                        "that is not a YAML file: {path_toc}"
                     )
             else:
                 path_toc = None
@@ -171,4 +192,4 @@ def build_sphinx(
             return app.statuscode
     except (Exception, KeyboardInterrupt) as exc:
         handle_exception(app, debug_args, exc, error)
-        return 2
+        return exc

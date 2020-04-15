@@ -1,6 +1,4 @@
-"""Build an online book using Jupyter Notebooks and Jekyll."""
-from pathlib import Path
-import os
+"""Build a book with Jupyter Notebooks and Sphinx."""
 from docutils.parsers.rst.directives.body import Sidebar
 from .toc import update_indexname, add_toctree
 from .yaml import add_yaml_config
@@ -18,8 +16,11 @@ class MySidebar(Sidebar):
     def run(self):
         if not self.arguments:
             self.arguments = [""]
-
-        return super().run()
+        nodes = super().run()
+        # Remove the "title" node if it is empty
+        if not self.arguments:
+            nodes[0].children.pop(0)
+        return nodes
 
 
 # We connect this function to the step after the builder is initialized
@@ -33,8 +34,8 @@ def setup(app):
     # configuration for YAML metadata
     app.add_config_value("yaml_config_path", "", "html")
 
-    # Add configuration value to the template
-    app.connect("builder-inited", add_yaml_config)
+    app.connect("config-inited", add_yaml_config)
+
     return {
         "version": __version__,
         "parallel_read_safe": True,

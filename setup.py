@@ -1,7 +1,4 @@
 from setuptools import setup, find_packages
-import os
-import os.path as op
-from glob import glob
 from pathlib import Path
 
 text = Path("./jupyter_book/__init__.py").read_text()
@@ -10,6 +7,19 @@ for line in text.split("\n"):
         break
 version = line.split("= ")[-1].strip('"')
 
+# Documentation requirements
+path_doc_reqs = Path(__file__).parent.joinpath("docs", "requirements.txt")
+doc_reqs = [
+    ii for ii in path_doc_reqs.read_text().split("\n") if not ii.startswith("#")
+]
+test_reqs = [
+    "coverage",
+    "pytest>=3.6,<4",
+    "pytest-cov",
+    "beautifulsoup4",
+    "matplotlib",
+    "pytest-regressions",
+] + doc_reqs
 setup(
     name="jupyter-book",
     version=version,
@@ -33,38 +43,31 @@ setup(
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
-        "sphinx",
+        "sphinx<3",
         (
             "myst-nb @ "
-            "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"
+            "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"  # noqa E501
         ),
         "click",
         "setuptools",
-        "sphinx",
         "nbformat",
         "nbconvert",
         "nbclient",
         (
             "sphinx_togglebutton @ "
-            "https://github.com/ExecutableBookProject/sphinx-togglebutton/archive/master.zip"
+            "https://github.com/ExecutableBookProject/sphinx-togglebutton/archive/master.zip"  # noqa E501
         ),
         "sphinx-copybutton",
         "sphinxcontrib-bibtex",
         (
             "sphinx_book_theme @ "
-            "https://github.com/ExecutableBookProject/sphinx-book-theme/archive/master.zip"
+            "https://github.com/ExecutableBookProject/sphinx-book-theme/archive/master.zip"  # noqa E501
         ),
     ],
     extras_require={
-        "sphinx": ["folium", "numpy", "matplotlib", "ipywidgets", "pandas", "nbclient", "sympy"],
-        "testing": [
-            "coverage",
-            "pytest>=3.6,<4",
-            "pytest-cov",
-            "beautifulsoup4",
-            "matplotlib",
-            "numpy",
-        ],
+        "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
+        "sphinx": doc_reqs,
+        "testing": test_reqs,
         "pdfhtml": "pyppeteer",
     },
     entry_points={

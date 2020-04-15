@@ -15,11 +15,18 @@ it as a PDF by emulating a browser from the command-line.
 
 ### Installation
 
+### Installing pyppeteer
+
 If you wish to build a PDF from your book's HTML, you will need the `pyppeteer` package.
 You can install it like so:
 
 ```
 pip install pyppeteer
+```
+
+You may also need to install this bundle of packages below (on *nix systems):
+
+```{literalinclude} ../../.github/workflows/pyppeteer_reqs.txt
 ```
 
 ```{sidebar}

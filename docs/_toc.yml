@@ -7,10 +7,11 @@
   - file: start/02_create
   - file: start/03_build
   - file: start/04_publish
+  - file: start/cli
 
 - file: customize/index
   sections:
-    - file: customize/toc  
+    - file: customize/toc
     - file: customize/faq
     - file: customize/advanced
 
@@ -27,6 +28,7 @@
 - file: use/glue
 - file: use/hiding
 - file: use/layout
+- file: use/interactive
 
 - header: Advanced topics
 - file: use/page
