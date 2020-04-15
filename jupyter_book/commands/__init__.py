@@ -7,8 +7,6 @@ import click
 from glob import glob
 import shutil as sh
 import subprocess
-from subprocess import run, PIPE
-import asyncio
 from sphinx.util.osutil import cd
 import yaml
 
