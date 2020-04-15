@@ -22,7 +22,7 @@ def main():
     pass
 
 
-BUILD_OPTIONS = ["html", "pdf_html"]
+BUILD_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
 
 
 @main.command()
