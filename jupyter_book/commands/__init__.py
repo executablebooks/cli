@@ -137,7 +137,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
                 {path_pdf_output_rel}\
             """
             )
-        elif build == "pdflatex":
+        if build == "pdflatex":
             print("Finished generating latex for book...")
             print("Converting book latex into PDF...")
             # Convert to PDF via tex and template built Makefile and make.bat
