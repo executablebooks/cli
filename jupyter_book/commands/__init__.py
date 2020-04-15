@@ -141,16 +141,16 @@ def build(path_book, path_output, config, toc, warningiserror, build):
             print("Finished generating latex for book...")
             print("Converting book latex into PDF...")
             # Convert to PDF via tex and template built Makefile and make.bat
-            if sys.platform == 'win32':
-                makecmd = os.environ.get('MAKE', 'make.bat')
+            if sys.platform == "win32":
+                makecmd = os.environ.get("MAKE", "make.bat")
             else:
-                makecmd = os.environ.get('MAKE', 'make')
+                makecmd = os.environ.get("MAKE", "make")
             try:
                 with cd(OUTPUT_PATH):
-                    subprocess.call([makecmd, 'all-pdf'])
+                    subprocess.call([makecmd, "all-pdf"])
                 print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
             except OSError:
-                print('Error: Failed to run: %s' % makecmd)
+                print("Error: Failed to run: %s" % makecmd)
                 return 1
 
 
