@@ -97,7 +97,6 @@ def add_toctree(app, docname, source):
     toc_sections = []
     toc_options = []
 
-
     for ipage in subsections:
         # First handle special case of chapters
         if "header" in ipage:

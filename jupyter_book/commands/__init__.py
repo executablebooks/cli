@@ -147,7 +147,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
                 makecmd = os.environ.get('MAKE', 'make')
             try:
                 with cd(OUTPUT_PATH):
-                    out = subprocess.call([makecmd, 'all-pdf'])
+                    subprocess.call([makecmd, 'all-pdf'])
                 print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
             except OSError:
                 print('Error: Failed to run: %s' % makecmd)
