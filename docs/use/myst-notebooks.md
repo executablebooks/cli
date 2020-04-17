@@ -50,7 +50,7 @@ Jupytext can also **automatically synchronize an `.ipynb` file with your markdow
 To do so, use a Jupyter interface such as Jupyter Lab or the classic Notebook interface
 and follow the [Jupytext instructions for paired notebooks](https://jupytext.readthedocs.io/en/latest/using-server.html#paired-notebooks).
 
-```{sidebar} Markdown takes precedence
+```{margin} Markdown takes precedence
 If **both** an `.ipynb` and a `.md` file exist in your book's folders, then
 the `.md` file will take precedence!
 ```
@@ -132,7 +132,7 @@ kernelspec:
 Tells Jupytext that the file is in `myst` format, and that its code should
 be run with a Python3 kernel.
 
-```{sidebar}
+```{margin}
 Remember that Jupyter always defines one, and only one, kernel per notebook.
 ```
 

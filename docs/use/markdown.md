@@ -15,7 +15,7 @@ If you'd like a more in-depth overview and guide to CommonMark markdown, see
 This page describes some basic features of Jupyter Notebook markdown, and how to
 include them with your book.
 
-```{sidebar}
+```{margin}
 Jupyter Book also supports a fancier version of markdown called **MyST Markdown**. This
 is a slightly extended flavor of Jupyter Notebook markdown. It
 allows you to include citations and cross-references, and control more complex
@@ -61,7 +61,7 @@ For example, here's a mathematical expression rendered with MathJax:
 
 $$
 \begin{align}
-    P(A_1 \cup A_2 \cup A_3) 
+    P(A_1 \cup A_2 \cup A_3)
     & = P(B \cup A_3)  \\
     & = P(B) + P(A_3) - P(BA_3) \\
     &= P(A_1) + P(A_2) - P(A_1A_2) + P(A_3) - P(A_1A_3 \cup A_2A_3) \\

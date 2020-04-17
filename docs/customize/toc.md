@@ -3,7 +3,7 @@
 There are many ways in which you can control the table of contents for
 your book. Most of them involve adding syntax to your `_toc.yml` file.
 
-```{sidebar}
+```{margin}
 Note that some TOC options may only trigger behavior in HTML or PDF outputs,
 respectively.
 ```

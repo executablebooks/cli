@@ -52,7 +52,7 @@ information about the CLI, see {doc}`cli`.
 We'll use a small template book to show what kinds of files you might put inside your own.
 To create a new Jupyter Book, type the following at the command-line:
 
-```{sidebar}
+```{margin}
 You can also use the short-hand `jb` for `jupyter-book`. E.g.,:
 `jb create mybookname`. We'll use `jupyter-book` for the rest of this guide.
 ```
@@ -104,7 +104,7 @@ You can define metadata for your book (such as its title), add
 a book logo, turn on different "interactive" buttons (such as a
 {term}`Binder` button for pages built from a Jupyter Notebook), and more.
 
-```{sidebar}
+```{margin}
 For more information about your book's configuration file, see
 {doc}`../customize/config`.
 ```
@@ -154,7 +154,7 @@ this file is here:
     - file: features/notebooks
 ```
 
-```{sidebar}
+```{margin}
 For more information about your book's table of contents file, see
 {doc}`../customize/toc`.
 ```

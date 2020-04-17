@@ -58,55 +58,75 @@ make_fig(figsize=(10, 5))
 
 Adding sidebar content allows you to provide contextual information that doesn't break
 up the flow of your main content. It is one of the main patterns recommended in the
-[Tufte style guide](https://edwardtufte.github.io/tufte-css/). You can control
-sidebar content for either blocks of markdown, or for code cells and their outputs.
+[Tufte style guide](https://edwardtufte.github.io/tufte-css/).
+
+There are two kinds of sidebar content supported in Jupyter Book, which we'll
+describe below.
 
 ```{note}
-Sidebar content behaves differently depending on the screen size. If the screen is narrow
+Some Sidebar content behaves differently depending on the screen size. If the screen is narrow
 enough, the sidebar content will exist in-line with your content. Make the screen
 wider and it'll pop out to the right.
 ```
 
-### Sidebars with MyST markdown
+### Within-content sidebars
 
-To add sidebar content within a markdown cell, use this syntax:
+To add within-content sidebars, use this syntax:
+
+```{sidebar} My sidebar title
+My sidebar content
+```
+
+The sidebar will stay in-line with your page's content, but will be
+placed to the right, allowing your content to wrap around it. This prevents
+the sidebar from brekaing up the flow of your content.
 
 ````
-```{sidebar} An optional title
+```{sidebar} My sidebar title
 My sidebar content
 ```
 ````
 
-`````{sidebar} **For example**
-Here's some sidebar content! It was created by using the
+### Margin content
+
+To add margin content with myst markdown, use this syntax:
+
 ````
-```{sidebar}
+```{margin} An optional title
+My margin content
+```
+````
+
+`````{margin} **For example**
+Here's some margin content! It was created by using the
+````
+```{margin}
 ```
 ````
 directive in a markdown cell. Jupyter Book automatically converts these
 cells into helpful side content.
 `````
 
-Controlling sidebar content with code cells uses a slightly different pattern,
+Controlling margin content with code cells uses a slightly different pattern,
 which we'll cover below.
 
-### Sidebars with code cells
+### Margins with code cells
 
-You can make a code cell move to the right sidebar by adding `sidebar` to your
-cell's tags. Here's what the cell metadata for a sidebar cell looks like:
+You can make a code cell move to the right margin by adding `margin` to your
+cell's tags. Here's what the cell metadata for a margin cell looks like:
 
 ```json
 {
     "tags": [
-        "sidebar",
+        "margin",
     ]
 }
 ```
 
-For example, we'll re-display the figure above, and add a `sidebar` tag to the code cell.
+For example, we'll re-display the figure above, and add a `margin` tag to the code cell.
 
 ```{code-cell} ipython3
-:tags: [sidebar]
+:tags: [margin]
 
 make_fig(figsize=(10, 5))
 ```
