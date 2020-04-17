@@ -23,4 +23,4 @@ def test_pdflatex(tmpdir):
     cmd = f"jb build {path_template} --path-output {path_output} --build pdflatex"
     run(cmd.split(), check=True)
     path_pdf = path_output.joinpath("_build", "latex")
-    assert path_pdf.joinpath("book.pdf").exists()
+    assert path_pdf.joinpath("python.pdf").exists()    # TODO: update to book.pdf
