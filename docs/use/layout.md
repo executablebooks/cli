@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Controlling the page layout
+# Control the page layout
 
 ```{warning}
 Many of the features on this page are experimental, and may change.
@@ -72,7 +72,7 @@ wider and it'll pop out to the right.
 To add sidebar content within a markdown cell, use this syntax:
 
 ````
-```{sidebar} **My sidebar title**
+```{sidebar} An optional title
 My sidebar content
 ```
 ````

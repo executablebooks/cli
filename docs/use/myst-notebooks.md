@@ -11,11 +11,13 @@ kernelspec:
   name: python3
 ---
 
-# Notebooks as text files with MyST markdown
+# Notebooks with pure-text
 
 It is possible to store Jupyter Notebooks in pure markdown. This allows you
-to define a notebook structure entirely using MyST Markdown. This structure
-can be read in, executed, and cached by Jupyter Book (see {doc}`execute` for
+to define a notebook structure entirely using MyST Markdown. For more information
+about MyST Markdown, see {doc}`myst`.
+
+Notebooks with markdown can be read in, executed, and cached by Jupyter Book (see {doc}`execute` for
 information on how to cache pages). This allows you to store all of your
 notebook content in a text format that is much friendlier to version control,
 while still having all the functionality of a Jupyter Notebook.
@@ -52,6 +54,22 @@ and follow the [Jupytext instructions for paired notebooks](https://jupytext.rea
 If **both** an `.ipynb` and a `.md` file exist in your book's folders, then
 the `.md` file will take precedence!
 ```
+
+### The Jupyter Book MyST CLI
+
+Jupyter Book has a small CLI to provide common functionality for manipulating and
+creating MyST markdown files that synchronize with Jupytext. To add Jupytext syntax
+to a markdown file (that will tell Jupytext it is a MyST markdown file), run the
+following command:
+
+```bash
+jupyter-book myst init mymarkdownfile.md --kernel kernelname
+```
+
+If you do not specify `--kernel`, then the default kernel will be used *if there is
+only one available*. If there are multiple kernels available, you must specify one
+manually.
+
 
 ## Structure of MyST notebooks
 
@@ -114,7 +132,7 @@ kernelspec:
 Tells Jupytext that the file is in `myst` format, and that its code should
 be run with a Python3 kernel.
 
-```{sidebar} One kernel per notebook...
+```{sidebar}
 Remember that Jupyter always defines one, and only one, kernel per notebook.
 ```
 
