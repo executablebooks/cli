@@ -56,11 +56,11 @@ make_fig(figsize=(10, 5))
 (layout/sidebar)=
 ## Sidebar content
 
-Adding sidebar content allows you to provide contextual information that doesn't break
+Adding sidebar elements allow you to provide contextual information that doesn't break
 up the flow of your main content. It is one of the main patterns recommended in the
 [Tufte style guide](https://edwardtufte.github.io/tufte-css/).
 
-There are two kinds of sidebar content supported in Jupyter Book, which we'll
+There are two kinds of sidebars supported in Jupyter Book, which we'll
 describe below.
 
 ```{note}
@@ -169,7 +169,7 @@ you to highlight particular ideas, visualizations, etc.
 
 In Jupyter Book, you can specify that the outputs of a cell (if it's a code cell) or the entire
 cell (if it's a markdown cell) should take up all of
-the horizonal space (including the sidebar where popouts normally live) using the
+the horizonal space (including the margin to the right) using the
 following cell metadata tag:
 
 ```json

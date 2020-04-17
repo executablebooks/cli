@@ -26,9 +26,9 @@ for reference (it is a subset of this book's `_toc.yml` file):
 - file: start/build
 
 - header: Book pages and types
-- file: use/markdown
-- file: use/notebooks
-- file: use/myst-notebooks
+- file: content/markdown
+- file: content/notebooks
+- file: content/myst-notebooks
 
 - header: Reference and test pages
 - file: test_pages/test

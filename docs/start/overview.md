@@ -147,7 +147,7 @@ Each item in the `_toc.yml` file points to a single content file. The links
 should be **relative to your book's folder and with no extension.**
 
 For example, in the example above there is a file in
-`mybookname/use/notebooks.ipynb`. The TOC entry that points to
+`mybookname/content/notebooks.ipynb`. The TOC entry that points to
 this file is here:
 
 ```yaml
@@ -190,7 +190,7 @@ mybookname/
 ```
 
 This BiBTex file can be used to insert citations into your book's pages. For more information,
-see {doc}`../use/citations`.
+see {doc}`../content/citations`.
 
 
 ## Next step: build your book

@@ -19,8 +19,8 @@ include them with your book.
 Jupyter Book also supports a fancier version of markdown called **MyST Markdown**. This
 is a slightly extended flavor of Jupyter Notebook markdown. It
 allows you to include citations and cross-references, and control more complex
-functionality like adding content to the sidebar. For more
-information, check out {doc}`myst`.
+functionality like adding content to the margin. For more
+information, check out {doc}`../content/myst`.
 ```
 
 ## Embedding media
@@ -101,7 +101,7 @@ Results in:
 yep = its_more^math
 \end{align*}
 
-For more information about math with Jupyter Book, see {doc}`math`.
+For more information about math with Jupyter Book, see {doc}`../content/math`.
 
 ## Extended markdown with MyST Markdown
 
@@ -109,4 +109,4 @@ In addition to CommonMark markdown, Jupyter Book also supports a more
 fully-featured version of markdown called **MyST Markdown**. This is a slight
 addition to CommonMark that includes syntactic pieces that are useful for
 publishing computational narratives. For more information about MyST
-Markdown, see {doc}`myst`.
+Markdown, see {doc}`../content/myst`.
