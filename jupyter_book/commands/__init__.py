@@ -32,7 +32,7 @@ BUILD_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
 @click.option("--toc", default=None, help="Path to the Table of Contents YAML file")
 @click.option("-W", "--warningiserror", is_flag=True, help="Error on warnings.")
 @click.option(
-    "--build",
+    "--builder",
     default="html",
     help="What kind of output to build. Must be one of {BUILD_OPTIONS}",
 )
@@ -52,7 +52,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
     }
     if build not in build_dict.keys():
         allowed_keys = tuple(build_dict.keys())
-        _error(f"Value for --build must be one of {allowed_keys}. Got '{build}'")
+        _error(f"Value for --builder must be one of {allowed_keys}. Got '{build}'")
     builder = build_dict[build]
 
     # Table of contents

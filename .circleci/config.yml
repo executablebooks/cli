@@ -42,7 +42,7 @@ jobs:
       # Build a PDF of the book to view as an artifact
       - run:
           name: PDF from HTML
-          command: jb build docs --build pdfhtml
+          command: jb build docs --builder pdfhtml
 
       - store_artifacts:
           path: docs/_build/pdf/book.pdf

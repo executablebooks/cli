@@ -38,7 +38,7 @@ to see if that fixes it. We warned you it was an experimental feature :-)
 To build a single PDF from your book's HTML, use the following command:
 
 ```
-jupyter-book build mybookname/ --build pdfhtml
+jupyter-book build mybookname/ --builder pdfhtml
 ```
 
 ## Build a PDF using Latex
