@@ -92,7 +92,7 @@ jobs:
 
       # Build Docs PDF as an artifact
       - run:
-          name: PDF from HTML
+          name: PDF from LaTeX
           command: jb build docs --builder pdflatex
 
       - store_artifacts:
