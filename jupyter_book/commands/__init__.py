@@ -75,9 +75,14 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
     if config is not None:
         book_config["yaml_config_path"] = str(config)
         config_yaml = yaml.safe_load(config.read_text())
-
         # Pop the extra extensions since we need to append, not replace
         extra_extensions = config_yaml.pop("sphinx", {}).get("extra_extensions")
+        # Support Top Level config Passthrough
+        # https://www.sphinx-doc.org/en/latest/usage/configuration.html#project-information
+        sphinx_options = ["project", "author", "copyright"]
+        for option in sphinx_options:
+            if option in config_yaml.keys():
+                book_config[option] = config_yaml[option]
 
     # Builder-specific overrides
     latex_config = None
@@ -86,8 +91,13 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
     if builder == "pdflatex":
         if "latex" in config_yaml.keys():
             latex_config = config_yaml.pop("latex")
+        if "title" in config_yaml.keys():
+            # Note: a latex_documents specified title takes precendence over a top level title
+            if latex_config is not None and "title" not in latex_config['latex_documents'].keys():
+                latex_config['latex_documents']['title'] = config_yaml['title']
+            else:
+                latex_config = {'latex_documents' : {'title' : config_yaml['title']}}   
             
-
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
     if builder in ["html", "pdfhtml"]:
