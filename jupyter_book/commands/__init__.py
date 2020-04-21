@@ -22,7 +22,7 @@ def main():
     pass
 
 
-BUILD_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
+BUILDER_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
 
 
 @main.command()
@@ -34,9 +34,9 @@ BUILD_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
 @click.option(
     "--builder",
     default="html",
-    help="What kind of output to build. Must be one of {BUILD_OPTIONS}",
+    help="Which Sphinx Builder to use. Must be one of {BUILDER_OPTIONS}",
 )
-def build(path_book, path_output, config, toc, warningiserror, build):
+def build(path_book, path_output, config, toc, warningiserror, builder):
     """Convert your book's content to HTML or a PDF."""
     # Paths for our notebooks
     PATH_BOOK = Path(path_book).absolute()
@@ -44,16 +44,16 @@ def build(path_book, path_output, config, toc, warningiserror, build):
         _error(f"Path to book isn't a directory: {PATH_BOOK}")
 
     book_config = {}
-    build_dict = {
+    builder_dict = {
         "html": "html",
         "pdfhtml": "singlehtml",
         "latex": "latex",
         "pdflatex": "latex",
     }
-    if build not in build_dict.keys():
+    if builder not in builder_dict.keys():
         allowed_keys = tuple(build_dict.keys())
-        _error(f"Value for --builder must be one of {allowed_keys}. Got '{build}'")
-    builder = build_dict[build]
+        _error(f"Value for --builder must be one of {allowed_keys}. Got '{builder}'")
+    sphinx_builder = builder_dict[build]
 
     # Table of contents
     if toc is None:
@@ -80,14 +80,14 @@ def build(path_book, path_output, config, toc, warningiserror, build):
         extra_extensions = config_yaml.pop("sphinx", {}).get("extra_extensions")
 
     # Builder-specific overrides
-    if build == "pdfhtml":
+    if builder == "pdfhtml":
         book_config["html_theme_options"] = {"single_page": True}
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
-    if build in ["html", "pdfhtml"]:
+    if builder in ["html", "pdfhtml"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("html")
-    elif build in ["latex", "pdflatex"]:
+    elif builder in ["latex", "pdflatex"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("latex")
 
     # Now call the Sphinx commands to build
@@ -96,7 +96,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
         OUTPUT_PATH,
         noconfig=True,
         confoverrides=book_config,
-        builder=builder,
+        builder=sphinx_builder,
         warningiserror=warningiserror,
         extra_extensions=extra_extensions,
     )
@@ -108,7 +108,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
         )
     else:
         # Builder-specific options
-        if build == "html":
+        if builder == "html":
             path_output_rel = Path(op.relpath(OUTPUT_PATH, Path()))
             path_index = path_output_rel.joinpath("index.html")
             _message_box(
@@ -122,7 +122,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
                 {path_index}\
             """
             )
-        if build == "pdfhtml":
+        if builder == "pdfhtml":
             print("Finished generating HTML for book...")
             print("Converting book HTML into PDF...")
             path_pdf_output = OUTPUT_PATH.parent.joinpath("pdf")
@@ -137,7 +137,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
                 {path_pdf_output_rel}\
             """
             )
-        if build == "pdflatex":
+        if builder == "pdflatex":
             print("Finished generating latex for book...")
             print("Converting book latex into PDF...")
             # Convert to PDF via tex and template built Makefile and make.bat
