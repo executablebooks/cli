@@ -51,7 +51,7 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
         "pdflatex": "latex",
     }
     if builder not in builder_dict.keys():
-        allowed_keys = tuple(build_dict.keys())
+        allowed_keys = tuple(builder_dict.keys())
         _error(f"Value for --builder must be one of {allowed_keys}. Got '{builder}'")
     sphinx_builder = builder_dict[build]
 
