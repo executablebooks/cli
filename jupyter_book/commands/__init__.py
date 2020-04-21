@@ -82,6 +82,10 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
     # Builder-specific overrides
     if builder == "pdfhtml":
         book_config["html_theme_options"] = {"single_page": True}
+    if builder == "pdflatex":
+        latex_config = config_yaml.pop("latex")
+    else:
+        latex_config = None
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
@@ -96,6 +100,7 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
         OUTPUT_PATH,
         noconfig=True,
         confoverrides=book_config,
+        latexoverrides=latex_config,
         builder=sphinx_builder,
         warningiserror=warningiserror,
         extra_extensions=extra_extensions,
