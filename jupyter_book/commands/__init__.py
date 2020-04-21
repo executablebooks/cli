@@ -83,9 +83,10 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
     if builder == "pdfhtml":
         book_config["html_theme_options"] = {"single_page": True}
     if builder == "pdflatex":
-        latex_config = config_yaml.pop("latex")
-    else:
-        latex_config = None
+        if "latex" in config_yaml.keys():
+            latex_config = config_yaml.pop("latex")
+        else:
+            latex_config = None
 
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
