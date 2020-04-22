@@ -10,7 +10,7 @@ Jupyter Book 2.0 allows users to
     * a publication-quality PDF.
 
 ```{warning}
-This is an early prototype that may evolve quickly. All [feedback](https://jupyter-cache.readthedocs.io/en/latest/) is very welcome! 
+This is an early prototype that may evolve quickly. All [feedback](https://jupyter-cache.readthedocs.io/en/latest/) is very welcome!
 ```
 
 
@@ -35,7 +35,7 @@ in the [docs](https://github.com/ExecutableBookProject/quantecon-mini-example/tr
 The MyST source files can be edited as either text files or Jupyter notebooks,
 or a combination of both, via [Jupytext](https://jupytext.readthedocs.io/en/latest/introduction.html)
 
-Note that 
+Note that
 
 * Jupytext [supports](https://jupytext.readthedocs.io/en/latest/formats.html#myst-markdown) the Myst markdown format.
 
@@ -52,7 +52,7 @@ You can build this book locally on the command line via the following steps:
     conda install numpy matplotlib
     ```
 
-3. Install Jupyter Book 
+3. Install Jupyter Book
 
     ```
     pip install git+https://github.com/ExecutableBookProject/cli.git@master
@@ -71,18 +71,34 @@ You can build this book locally on the command line via the following steps:
     jupyter-book build mini_book/docs
     ```
 
-6. View the result (using firefox in this example)
+6. View the result through a browser --- try (with, say, firefox)
 
 
     ```
     firefox mini_book/docs/_build/html/index.html
     ```
 
+    or
+
+    ```
+    cd mini_book/docs/_build/html
+    python -m http.server
+    ```
+
+    and point your browser at the indicated port (e.g., ``localhost:8000``).
+
 Now you might like to try editing the files in ``mini_book/docs`` and then
 rebuilding.
 
+### Further Reading
+
+See [here](https://executablebookproject.github.io/quantecon-example/docs/index.html)
+for a longer Jupyter Book 2.0 use case, drawn from the same source material.
+
 The remaining documentation provides more information on installation, use and
 features of Jupyter Book 2.0.
+
+
 
 ## The components of Jupyter Book 2.0
 
