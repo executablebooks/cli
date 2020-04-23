@@ -111,7 +111,7 @@ def build(path_book, path_output, config, toc, warningiserror, build):
                 {path_index}
 
             Or paste this line directly into your browser bar:
-                file://{OUTPUT_PATH}\
+                file://{path_index.resolve()}\
             """
             )
         if build == "pdf_html":
