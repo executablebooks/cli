@@ -246,10 +246,12 @@ def clean(path_book, all_):
     else:
         # Empty _build except .jupyter_cache
         to_remove = [
-            d for d in build_path.iterdir() if d.is_dir() and d.name != ".jupyter_cache"
+            dd
+            for dd in build_path.iterdir()
+            if dd.is_dir() and dd.name != ".jupyter_cache"
         ]
-        for d in to_remove:
-            sh.rmtree(build_path.joinpath(d.name))
+        for dd in to_remove:
+            sh.rmtree(build_path.joinpath(dd.name))
         _message_box(
             f"Your _build directory has been emptied except for .jupyter_cache"
         )
