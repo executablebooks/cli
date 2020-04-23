@@ -26,18 +26,18 @@ Some of the features on display include
 * [numbered equations](https://executablebookproject.github.io/quantecon-mini-example/docs/python_by_example.html#another-application)
 * [numbered figures](https://executablebookproject.github.io/quantecon-mini-example/docs/getting_started.html#jupyter-notebooks) with captions and cross-referencing
 
-The source files are written in [Myst markdown](https://myst-parser.readthedocs.io/en/latest/) and can be [found
+The source files are written in [MyST markdown](https://myst-parser.readthedocs.io/en/latest/) and can be [found
 on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/)
 in the [docs](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs) directory.
 
-(The could alternatively have been written directly as Jupyter notebooks.)
+(They could alternatively have been written directly as Jupyter notebooks.)
 
 The MyST source files can be edited as either text files or Jupyter notebooks,
 or a combination of both, via [Jupytext](https://jupytext.readthedocs.io/en/latest/introduction.html)
 
 Note that
 
-* Jupytext [supports](https://jupytext.readthedocs.io/en/latest/formats.html#myst-markdown) the Myst markdown format.
+* Jupytext [supports](https://jupytext.readthedocs.io/en/latest/formats.html#myst-markdown) the MyST markdown format.
 
 * If editing the markdown files using VS Code, the [MyST markdown extension](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) provides syntax highlighting and other features.
 
