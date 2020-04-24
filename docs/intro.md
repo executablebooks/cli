@@ -33,7 +33,9 @@ The source files are written in [MyST markdown](https://myst-parser.readthedocs.
 on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/)
 in the [docs directory](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs).
 
-(They could alternatively have been written directly as Jupyter notebooks.)
+```{margin}
+They could alternatively have been written directly as Jupyter notebooks!
+```
 
 The MyST source files can be edited as either text files or Jupyter notebooks,
 or a combination of both, via [Jupytext](https://jupytext.readthedocs.io/en/latest/introduction.html)
