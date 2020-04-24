@@ -1,5 +1,8 @@
 # Books with Jupyter 2.0
 
+Jupyter Book is an open-source tool for building publication-quality books and documents from
+computational material.
+
 Jupyter Book 2.0 allows users to
 
 * write their content in [markdown files](https://myst-parser.readthedocs.io/en/latest/) or [Jupyter](https://jupyter.org/) notebooks,
