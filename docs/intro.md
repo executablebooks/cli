@@ -31,7 +31,7 @@ Some of the features on display include
 
 The source files are written in [MyST markdown](https://myst-parser.readthedocs.io/en/latest/) and can be [found
 on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/)
-in the [docs](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs) directory.
+in the [docs directory](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs).
 
 (They could alternatively have been written directly as Jupyter notebooks.)
 
