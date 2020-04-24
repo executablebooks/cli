@@ -10,7 +10,7 @@ Jupyter Book 2.0 allows users to
     * a publication-quality PDF.
 
 ```{warning}
-This is an early prototype that may evolve quickly. All [feedback](https://jupyter-cache.readthedocs.io/en/latest/) is very welcome!
+This is an early prototype that may evolve quickly. All [feedback](https://github.com/ExecutableBookProject/cli/issues/new) is very welcome!
 ```
 
 
