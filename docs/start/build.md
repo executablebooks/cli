@@ -11,7 +11,7 @@ from the book HTML.
 ## Prerequisites
 
 In order to build the HTML for each page, you should have followed the steps
-in [creating your Jupyter Book structure](overview). You should have
+in {doc}`creating your Jupyter Book structure <overview>`. You should have
 a collection of notebook/markdown files in your `mybookname/` folder, a `_toc.yml` file
 that defines the structure of your book, and any configuration you'd like
 in the `_config.yml` file.
@@ -40,6 +40,23 @@ You can also use the short-hand `jb` for `jupyter-book`. E.g.,:
 `jb build mybookname/`.
 ```
 
+## Build a standalone page
+
+Sometimes you'd like to build a single page of content rather than an
+entire book. For example, if you'd like to generate a web-friendly HTML
+page from a Jupyter Notebook for a report or publication.
+
+You can generate a standalone HTML file for a single page of Jupyter Book
+content by running the following command:
+
+```
+jupyter-book page path/to/mypage.ipynb
+```
+
+This will execute your content and output the proper HTML in a
+`_build/html` folder. Your page will be called `mypage.html`. This will work
+for any {doc}`content source file <../content-types/index>`) that is supported by Jupyter Book.
+
 ## Page caching
 
 By default, Jupyter Book will only build the HTML for pages that have
@@ -49,7 +66,14 @@ force Jupyter Book to re-build a particular page, you can either edit the
 corresponding file in your book's folder, or delete that page's HTML
 in the `_build/html` folder.
 
-## Next step: build and publish your book
+## Local preview
+
+To preview your book, you can open the generated HTML files in your browser.
+Either double-click the html file in your local folder, or enter the absolute
+path to the file in your browser navigation bar adding `file://` at the beginning
+(e.g. `file://Users/my_path_to_book/_build/index.html`).
+
+## Next step: publish your book
 
 Now that you've created the HTML for your book, it's time
 to publish it online. That's covered in the next section.

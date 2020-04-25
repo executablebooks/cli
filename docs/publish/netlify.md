@@ -15,7 +15,7 @@ Here, we'll walk through connecting your Jupyter Book to Netlify's continous dep
 You can also check out their [documentation on continuous deployment](https://www.netlify.com/docs/continuous-deployment/).
 
 ```{admonition} **Prerequisites**
-We assume that you have already [built your book's HTML](../start/build) and that
+We assume that you have already {doc}`built your book's HTML <../start/build>`) and that
 your HTML content is in the `_build/html` folder. We also assume that you have followed
 the instructions in {ref}`publish/online-repo`.
 ```
@@ -38,7 +38,7 @@ Authorizing access will take you to the next step of the build process, where yo
 
 ![Netlify continous deployment](../images/netlify-cd.png)
 
-```{sidebar}
+```{margin}
 If your book content is not in the root of your repository, make sure you point to it
 in the `jupyter-book build` command.
 ```
