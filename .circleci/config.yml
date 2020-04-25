@@ -90,9 +90,7 @@ jobs:
       - save_cache:
           key: texlive-full
           paths:
-            - ~/tmp/texlive
-
-
+            - /tmp/texlive
 
       - run:
           name: Run pytest for pdflatex
