@@ -42,15 +42,16 @@ async def _html_to_pdf(html_file, pdf_file):
     await page.pdf({"path": pdf_file, "margin": page_margins})
     await browser.close()
 
+
 def update_latex_documents(latex_documents, latexoverrides):
     """
     Apply latexoverrides from _config.yml to latex_documents tuple
     """
-    latexdocs_tuple = ('startdocname', 'targetname', 'title', \
-                    'author', 'theme', 'toctree_only' )
+    latexdocs_tuple = ('startdocname', 'targetname', 'title',
+                       'author', 'theme', 'toctree_only')
     updated_latexdocs = []
     for loc, item in enumerate(latexdocs_tuple):
-        #the last element toctree_only seems optionally included
+        # the last element toctree_only seems optionally included
         if loc >= len(latex_documents): 
             break
         if item in latexoverrides["latex_documents"].keys():

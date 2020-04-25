@@ -41,9 +41,6 @@ def add_toctree(app, docname, source):
     if not app.config["globaltoc_path"]:
         return
 
-    # Some behavior we only trigger with an HTML build
-    is_html = "latex" not in app.builder.name
-
     # First check whether this page has any descendants
     # If so, then we'll manually add them as a toctree object
     path_parent = app.env.doc2path(docname, base=None)

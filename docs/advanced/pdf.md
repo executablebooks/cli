@@ -73,7 +73,8 @@ sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive
 
 alternativey you can install [texlive](https://www.tug.org/texlive/quickinstall.html)
 
-For `OSX` you may want to use [mactex](http://www.tug.org/mactex/) which is a more user friendly approach, alternatively you may use [texlive](https://www.tug.org/texlive/quickinstall.html)
+For `OSX` you may want to use [mactex](http://www.tug.org/mactex/) which is a more
+user friendly approach, alternatively you may use [texlive](https://www.tug.org/texlive/quickinstall.html)
 
 For `Windows` please install [texlive](https://www.tug.org/texlive/windows.html)
 

@@ -167,8 +167,9 @@ def build_sphinx(
                 jobs,
                 keep_going,
             )
-            #Apply Latex Overrides for latex_documents
-            if latexoverrides is not None and "latex_documents" in latexoverrides.keys():
+            # Apply Latex Overrides for latex_documents
+            if latexoverrides is not None \
+                and "latex_documents" in latexoverrides.keys():
                 from .pdf import update_latex_documents
                 latex_documents = \
                     update_latex_documents(app.config.latex_documents[0], latexoverrides)
