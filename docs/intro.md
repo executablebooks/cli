@@ -1,9 +1,8 @@
-# Books with Jupyter 2.0
+# Books with Jupyter
 
-Jupyter Book is an open-source tool for building publication-quality books and documents from
-computational material.
+Jupyter Book is an open-source tool for building publication-quality books and documents from computational material.
 
-Jupyter Book 2.0 allows users to
+Jupyter Book allows users to
 
 * write their content in [markdown files](https://myst-parser.readthedocs.io/en/latest/) or [Jupyter](https://jupyter.org/) notebooks,
 * include computational elements (e.g., code cells) in either type,
@@ -19,8 +18,7 @@ This is an early prototype that may evolve quickly. All [feedback](https://githu
 
 ## A Small Example Project
 
-[Here's](https://executablebookproject.github.io/quantecon-mini-example/docs/index.html)
-short example of a web-based book created by Jupyter Book 2.0.
+Here's [a short example](https://executablebookproject.github.io/quantecon-mini-example/docs/index.html) of a web-based book created by Jupyter Book.
 
 Some of the features on display include
 
@@ -29,16 +27,13 @@ Some of the features on display include
 * [numbered equations](https://executablebookproject.github.io/quantecon-mini-example/docs/python_by_example.html#another-application)
 * [numbered figures](https://executablebookproject.github.io/quantecon-mini-example/docs/getting_started.html#jupyter-notebooks) with captions and cross-referencing
 
-The source files are written in [MyST markdown](https://myst-parser.readthedocs.io/en/latest/) and can be [found
-on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/)
-in the [docs directory](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs).
+The source files  can be [found on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/) in the [docs directory](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs).
 
-```{margin}
-They could alternatively have been written directly as Jupyter notebooks!
-```
+These files are written [MyST markdown](https://myst-parser.readthedocs.io/en/latest/), an extension of Jupyter notebook markdown that allows for additional scientific markup (e.g., numbered equations).
 
-The MyST source files can be edited as either text files or Jupyter notebooks,
-or a combination of both, via [Jupytext](https://jupytext.readthedocs.io/en/latest/introduction.html)
+They could alternatively have been written directly as Jupyter notebooks.
+
+In fact the MyST source files can be edited as either text files or Jupyter notebooks,  via [Jupytext](https://jupytext.readthedocs.io/en/latest/introduction.html).
 
 Note that
 
@@ -98,16 +93,16 @@ rebuilding.
 ### Further Reading
 
 See [here](https://executablebookproject.github.io/quantecon-example/docs/index.html)
-for a longer Jupyter Book 2.0 use case, drawn from the same source material.
+for a longer Jupyter Book use case, drawn from the same source material.
 
 The remaining documentation provides more information on installation, use and
-features of Jupyter Book 2.0.
+features of Jupyter Book.
 
 
 
-## The components of Jupyter Book 2.0
+## The components of Jupyter Book
 
-Jupyter Book 2.0 is a wrapper around a collection of tools in the Python
+Jupyter Book is a wrapper around a collection of tools in the Python
 ecosystem that make it easier to publish computational documents. Here are
 a few key pieces:
 
