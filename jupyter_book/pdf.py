@@ -1,6 +1,7 @@
 """Commands to facilitate conversion to PDF."""
 from pathlib import Path
 import asyncio
+import shutil
 
 from .utils import _error
 
@@ -42,7 +43,9 @@ async def _html_to_pdf(html_file, pdf_file):
     await page.pdf({"path": pdf_file, "margin": page_margins})
     await browser.close()
 
-
+def copy_themefile(app):
+    shutil.copy(app.srcdir + "/theme/latex_style.cls",app.outdir)
+    
 def update_latex_documents(latex_documents, latexoverrides):
     """
     Apply latexoverrides from _config.yml to latex_documents tuple

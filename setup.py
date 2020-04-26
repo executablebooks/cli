@@ -44,7 +44,7 @@ setup(
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
-        "sphinx<3",
+        "sphinx",
         (
             "myst-nb @ "
             "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"  # noqa E501
@@ -59,6 +59,7 @@ setup(
             "https://github.com/ExecutableBookProject/sphinx-togglebutton/archive/master.zip"  # noqa E501
         ),
         "sphinx-copybutton",
+        "sphinx-tabs",
         "sphinxcontrib-bibtex",
         (
             "sphinx_book_theme @ "

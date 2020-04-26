@@ -17,6 +17,9 @@ html:
   use_edit_page_button: true
   baseurl: https://beta.jupyterbook.org/
 
+latex:
+  latex_engine: xelatex
+
 repository:
   url                       : https://github.com/ExecutableBookProject/cli
   path_to_book              : "docs"
