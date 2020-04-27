@@ -16,7 +16,7 @@ def test_pdfhtml(tmpdir):
     assert path_html.joinpath("index.html").exists()
     assert path_pdf.joinpath("book.pdf").exists()
 
-
+# TODO: Update to include more detailed tests for pdflatex build chain
 def test_pdflatex(tmpdir):
     path_output = Path(tmpdir).absolute()
     path_template = path_tests.parent.joinpath("jupyter_book", "book_template")
