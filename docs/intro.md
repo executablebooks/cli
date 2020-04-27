@@ -41,6 +41,7 @@ Note that
 
 * If editing the markdown files using VS Code, the [MyST markdown extension](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) provides syntax highlighting and other features.
 
+## Build the demo book
 
 You can build this book locally on the command line via the following steps:
 
