@@ -172,7 +172,7 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
                 _message_box(
                     f"""\
                 A PDF of your book can be found at:
-                
+
                     {OUTPUT_PATH}
                 """
                 )
