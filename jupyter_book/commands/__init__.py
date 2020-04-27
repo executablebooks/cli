@@ -169,9 +169,17 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
             try:
                 with cd(OUTPUT_PATH):
                     subprocess.call([makecmd, "all-pdf"])
-                print(f"A PDF of your book can be found at: {OUTPUT_PATH}")
+                _message_box(
+                    f"""\
+                A PDF of your book can be found at: 
+                
+                    {OUTPUT_PATH}
+                """
+                )
             except OSError:
-                print("Error: Failed to run: %s" % makecmd)
+                _error(
+                    "Error: Failed to run: %s" % makecmd
+                )
                 return 1
 
 
