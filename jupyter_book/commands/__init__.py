@@ -34,7 +34,7 @@ BUILDER_OPTIONS = ["html", "pdfhtml", "latex", "pdflatex"]
 @click.option(
     "--builder",
     default="html",
-    help="Which Sphinx Builder to use. Must be one of {BUILDER_OPTIONS}",
+    help="Which builder to use. Must be one of {BUILDER_OPTIONS}",
 )
 def build(path_book, path_output, config, toc, warningiserror, builder):
     """Convert your book's content to HTML or a PDF."""
