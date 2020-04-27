@@ -168,7 +168,7 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
                 makecmd = os.environ.get("MAKE", "make")
             try:
                 with cd(OUTPUT_PATH):
-                    subprocess.call([makecmd, "all-pdf"])
+                    subprocess.run([makecmd, "all-pdf"])
                 _message_box(
                     f"""\
                 A PDF of your book can be found at: 
