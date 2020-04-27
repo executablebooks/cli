@@ -21,7 +21,7 @@ it as a PDF by emulating a browser from the command-line.
 
 ### Installation
 
-Your system will need to use `pyppeteer` to parse the generated html for 
+Your system will need to use `pyppeteer` to parse the generated html for
 conversion to PDF.
 
 ### Installing pyppeteer

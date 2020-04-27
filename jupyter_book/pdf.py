@@ -52,7 +52,7 @@ def update_latex_documents(latex_documents, latexoverrides):
     updated_latexdocs = []
     for loc, item in enumerate(latexdocs_tuple):
         # the last element toctree_only seems optionally included
-        if loc >= len(latex_documents): 
+        if loc >= len(latex_documents):
             break
         if item in latexoverrides["latex_documents"].keys():
             updated_latexdocs.append(latexoverrides["latex_documents"][item])

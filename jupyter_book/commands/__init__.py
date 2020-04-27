@@ -92,13 +92,13 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
         if "latex" in config_yaml.keys():
             latex_config = config_yaml.pop("latex")
         if "title" in config_yaml.keys():
-            # Note: a latex_documents specified title takes precendence 
+            # Note: a latex_documents specified title takes precendence
             # over a top level title
             if latex_config is not None \
                 and "title" not in latex_config['latex_documents'].keys():
                 latex_config['latex_documents']['title'] = config_yaml['title']
             else:
-                latex_config = {'latex_documents' : {'title' : config_yaml['title']}}   
+                latex_config = {'latex_documents' : {'title' : config_yaml['title']}}
             
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
