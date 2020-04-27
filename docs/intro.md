@@ -29,7 +29,9 @@ Some of the features on display include
 
 The source files  can be [found on GitHub](https://github.com/ExecutableBookProject/quantecon-mini-example/) in the [docs directory](https://github.com/ExecutableBookProject/quantecon-mini-example/tree/master/mini_book/docs).
 
-These files are written [MyST markdown](https://myst-parser.readthedocs.io/en/latest/), an extension of Jupyter notebook markdown that allows for additional scientific markup (e.g., numbered equations).
+These files are written in [MyST markdown](https://myst-parser.readthedocs.io/en/latest/), an
+extension of Jupyter notebook markdown that allows for
+additional scientific markup (e.g., numbered equations).
 
 They could alternatively have been written directly as Jupyter notebooks.
 
