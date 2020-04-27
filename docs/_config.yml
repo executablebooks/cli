@@ -19,6 +19,8 @@ html:
 
 latex:
   latex_engine: xelatex
+  latex_documents:
+    theme: sphinxmanual
 
 repository:
   url                       : https://github.com/ExecutableBookProject/cli

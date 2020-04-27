@@ -173,6 +173,7 @@ def build_sphinx(
                 from .pdf import update_latex_documents,copy_themefile
                 latex_documents = \
                     update_latex_documents(app.config.latex_documents[0], latexoverrides)
+                copy_themefile(app)
                 app.config.latex_documents = [latex_documents]
             app.build(force_all, filenames)
 
