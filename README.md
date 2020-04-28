@@ -1,17 +1,4 @@
-# Jupyter Book CLI
+# 🛑🛑 DEPRECATED 🛑🛑
 
-A super, duper alpha to see if we can replicate Jupyter Book with a litte
-CLI and Sphinx.
-
-## Install
-
-```
-pip install -e .
-```
-
-## Use
-
-```
-cd docs
-jupyter-book build
-```
+This repository has been deprecated. Use the [jupyter-book](https://github.com/ExecutableBookProject/jupyter-book)
+repository instead.
