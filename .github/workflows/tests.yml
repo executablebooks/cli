@@ -59,7 +59,7 @@ jobs:
     # Tests
     - name: Run pytest
       run: |
-        pytest --durations=10 --cov=jupyter_book --cov-report=xml --cov-report=term-missing
+        pytest --durations=10 --cov=jupyter_book --cov-report=xml --cov-report=term-missing --ignore=tests/test_pdf.py
         coverage xml
       # for some reason the tests/conftest.py::check_nbs fixture breaks pytest-cov's cov-report outputting
       # this is why we run `coverage xml` afterwards (required by codecov)
