@@ -99,7 +99,7 @@ def build(path_book, path_output, config, toc, warningiserror, builder):
                 latex_config['latex_documents']['title'] = config_yaml['title']
             else:
                 latex_config = {'latex_documents' : {'title' : config_yaml['title']}}
-            
+
     BUILD_PATH = path_output if path_output is not None else PATH_BOOK
     BUILD_PATH = Path(BUILD_PATH).joinpath("_build")
     if builder in ["html", "pdfhtml"]:
