@@ -47,8 +47,14 @@ def update_latex_documents(latex_documents, latexoverrides):
     """
     Apply latexoverrides from _config.yml to latex_documents tuple
     """
-    latexdocs_tuple = ('startdocname', 'targetname', 'title',
-                       'author', 'theme', 'toctree_only')
+    latexdocs_tuple = (
+        "startdocname",
+        "targetname",
+        "title",
+        "author",
+        "theme",
+        "toctree_only",
+    )
     updated_latexdocs = []
     for loc, item in enumerate(latexdocs_tuple):
         # the last element toctree_only seems optionally included
